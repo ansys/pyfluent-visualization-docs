@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pyfluent-visualization Documentation 0.1.dev0 &#8212; pyfluent-visualization</title>
+    
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    
+        <link href="_static/css/breadcrumbs.css" rel="stylesheet">
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started" href="getting_started/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><style>
+    .navbar-light {
+        background-color: black !important;
+    }
+</style>
+
+<div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="https://docs.pyansys.com/">
+  <img src="_static/pyansys-logo-black-cropped.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon" >
+      <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+    </span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="users_guide/index.html">
+  User’s Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="api/index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="contributing.html">
+  Contributing
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pyfluent-visualization" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+    
+        <div class="container-xl">
+    <div class="row">
+        <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
+        <div class="col-12 col-md-11 col-xl-9" id="breadcrumbs">
+          
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+    
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
+    
+    
+
+        <li class="nav-item nav-item-this"><a href="">pyfluent-visualization Documentation 0.1.dev0</a></li> 
+      </ul>
+    </div>
+        </div>
+  </div>
+</div>
+    
+
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-pyfluent">
+   What is PyFluent?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#features">
+   Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation-and-issues">
+   Documentation and Issues
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-index">
+   Project Index
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="pyfluent-visualization-documentation-version">
+<h1>pyfluent-visualization Documentation 0.1.dev0<a class="headerlink" href="#pyfluent-visualization-documentation-version" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Ansys Fluent is a state-of-the-art computational fluid dynamics (CFD) software
+package for modeling fluid flow, heat transfer, and chemical reactions in
+complex geometries.</p>
+<p>Ansys Fluent provides complete mesh flexibility, including the ability to solve
+your flow problems using unstructured meshes that can be generated about complex
+geometries with relative ease. Supported mesh types include 2D
+triangular/quadrilateral, 3D tetrahedral/hexahedral/pyramid/wedge/polyhedral,
+and mixed (hybrid) meshes. Ansys Fluent also enables you to refine or coarsen
+your mesh based on the flow solution.</p>
+<p>You can read your mesh into Ansys Fluent, or, for 3D geometries, create your
+mesh using the meshing mode of Fluent. All other operations are performed within
+the solution mode of Fluent, including setting boundary conditions, defining
+fluid properties, executing the solution, refining the mesh, running a parametric study,
+and postprocessing and viewing the results.</p>
+</section>
+<section id="what-is-pyfluent">
+<h2>What is PyFluent?<a class="headerlink" href="#what-is-pyfluent" title="Permalink to this headline">¶</a></h2>
+<p>PyFluent is part of the <a class="reference external" href="https://docs.pyansys.com">PyAnsys</a> ecosystem that
+lets you use Ansys Fluent within or alongside any other Python environment,
+whether it is in conjunction with other Ansys Python libraries and packages or
+with other external Python products.</p>
+<p>PyFluent implements a client-server architecture.  PyFluent launches or connects
+with a running Fluent process as a server using Google remote procedure calls,
+or gRPC interfaces, but all you need to interact with is the Python interface.</p>
+<p>You can use PyFluent to programmatically create, interact with and control an
+Ansys Fluent session to create your own customized workspace. In addition, you
+can use PyFluent to enhance your productivity with highly configurable,
+customized scripts.</p>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<p>The package, <code class="docutils literal notranslate"><span class="pre">ansys-fluent-visualization</span></code>, provides features such as:</p>
+<ul class="simple">
+<li><p>Script post processing using Fluent’s in-built post processing capabilities.
+See the <a class="reference internal" href="api/post/index.html#ref-postprocessing"><span class="std std-ref">Postprocessing</span></a> module for more information.</p></li>
+<li><p>Plotting of Fluent geometry and meshes using <a class="reference external" href="https://docs.pyvista.org">PyVista</a> from within a Python script or an
+interactive <a class="reference external" href="https://jupyter.org/">Jupyter notebook</a>.</p></li>
+<li><p>Access to Fluent surface based field data as Python objects via <a class="reference external" href="https://numpy.org/">NumPy</a> arrays</p></li>
+<li><p>and more…</p></li>
+</ul>
+</section>
+<section id="documentation-and-issues">
+<h2>Documentation and Issues<a class="headerlink" href="#documentation-and-issues" title="Permalink to this headline">¶</a></h2>
+<p>In addition to installation, usage, and contribution information, the PyFluent
+documentation provides API documentation, examples, and code guidelines.</p>
+<p>On the PyFluent Issues page, you can create issues to submit questions,
+report bugs, and request new features. To reach the project support team,
+email <a class="reference external" href="mailto:pyansys&#46;support&#37;&#52;&#48;ansys&#46;com">pyansys<span>&#46;</span>support<span>&#64;</span>ansys<span>&#46;</span>com</a>.</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>PyFluent is licensed under the MIT license.</p>
+<p>This module makes no commercial claim over Ansys whatsoever. PyFluent extends
+the functionality of Ansys Fluent by adding an additional Python interface to
+Ansys Fluent without changing the core behavior or license of the original
+software. The use of the interactive control of PyFluent requires a legally
+licensed local copy of Ansys Fluent. For more information about Ansys Fluent,
+visit <a class="reference external" href="https://www.ansys.com/products/fluids/ansys-fluent">Ansys Fluent</a>.</p>
+</section>
+<section id="project-index">
+<h2>Project Index<a class="headerlink" href="#project-index" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

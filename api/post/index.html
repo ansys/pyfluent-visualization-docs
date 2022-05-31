@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Postprocessing &#8212; pyfluent-visualization</title>
+    
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    
+        <link href="../../_static/css/breadcrumbs.css" rel="stylesheet">
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/thebelab-helper.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Graphics" href="pyvista_objects.html" />
+    <link rel="prev" title="API Reference" href="../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><style>
+    .navbar-light {
+        background-color: black !important;
+    }
+</style>
+
+<div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="https://docs.pyansys.com/">
+  <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon" >
+      <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+    </span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../users_guide/index.html">
+  User’s Guide
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../contributing.html">
+  Contributing
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pyfluent-visualization" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+    
+        <div class="container-xl">
+    <div class="row">
+        <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
+        <div class="col-12 col-md-11 col-xl-9" id="breadcrumbs">
+          
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+    
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
+    
+    
+        <li class="nav-item nav-item-0"><a href="../../index.html">pyfluent-visualization</a> » </li>
+    
+
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">API Reference</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">Postprocessing</a></li> 
+      </ul>
+    </div>
+        </div>
+  </div>
+</div>
+    
+
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Postprocessing
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="pyvista_objects.html">
+     Graphics
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/ansys.fluent.post.pyvista.pyvista_objects.Graphics.html">
+       ansys.fluent.post.pyvista.pyvista_objects.Graphics
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/ansys.fluent.post.pyvista.pyvista_objects.Mesh.html">
+       ansys.fluent.post.pyvista.pyvista_objects.Mesh
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/ansys.fluent.post.pyvista.pyvista_objects.Mesh.display.html">
+         display
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/ansys.fluent.post.pyvista.pyvista_objects.Mesh.update.html">
+         update
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/ansys.fluent.post.pyvista.pyvista_objects.Surface.html">
+       ansys.fluent.post.pyvista.pyvista_objects.Surface
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/ansys.fluent.post.pyvista.pyvista_objects.Surface.display.html">
+         display
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/ansys.fluent.post.pyvista.pyvista_objects.Surface.update.html">
+         update
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/ansys.fluent.post.pyvista.pyvista_objects.Contour.html">
+       ansys.fluent.post.pyvista.pyvista_objects.Contour
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/ansys.fluent.post.pyvista.pyvista_objects.Contour.display.html">
+         display
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/ansys.fluent.post.pyvista.pyvista_objects.Contour.update.html">
+         update
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fluent">
+   Fluent
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyvista-example-graphics">
+   PyVista Example (Graphics)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib-example-xyplots">
+   MatplotLib Example (XYPlots)
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="postprocessing">
+<span id="ref-postprocessing"></span><h1>Postprocessing<a class="headerlink" href="#postprocessing" title="Permalink to this headline">¶</a></h1>
+<p>Post processing Fluent results can be done with either Fluent in-built post
+processing capabilities or with the PyVista/MatplotLib integration.</p>
+<section id="fluent">
+<h2>Fluent<a class="headerlink" href="#fluent" title="Permalink to this headline">¶</a></h2>
+<p>Here visualization objects are constructed within Fluent.  Graphics can be
+written to a file using standard Fluent commands.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">session</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="s1">&#39;contour-1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;boundary_values&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;color_map&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;field-velocity&#39;</span><span class="p">,</span> <span class="s1">&#39;font_automatic&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;font_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Helvetica&#39;</span><span class="p">,</span> <span class="s1">&#39;font_size&#39;</span><span class="p">:</span> <span class="mf">0.032</span><span class="p">,</span> <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%0.2e</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="mf">0.54</span><span class="p">,</span> <span class="s1">&#39;log_scale&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;show_all&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;user_skip&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;visible&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mf">6.0</span><span class="p">},</span> <span class="s1">&#39;coloring&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;smooth&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span> <span class="s1">&#39;contour_lines&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;display_state_name&#39;</span><span class="p">:</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;draw_mesh&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;field&#39;</span><span class="p">:</span> <span class="s1">&#39;pressure&#39;</span><span class="p">,</span> <span class="s1">&#39;filled&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;mesh_object&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;node_values&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;range_option&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;auto_range_on&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;global_range&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}},</span> <span class="s1">&#39;surfaces_list&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]}</span>
+<span class="n">session</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="s1">&#39;contour-1&#39;</span><span class="p">]()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="s1">&#39;contour-1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="s1">&#39;velocity-magnitude&#39;</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="s1">&#39;contour-1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="s1">&#39;contour-1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">color_map</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="mf">80.0</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="s1">&#39;contour-1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">color_map</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="s1">&#39;contour-1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;my-contour&#39;</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">session</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="s1">&#39;my-contour&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="pyvista-example-graphics">
+<h2>PyVista Example (Graphics)<a class="headerlink" href="#pyvista-example-graphics" title="Permalink to this headline">¶</a></h2>
+<p>Here the field data is extracted from the Fluent session into the Python
+environment and PyVista is used to visualze the extracted data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import module</span>
+<span class="kn">from</span> <span class="nn">ansys.fluent.post.pyvista</span> <span class="kn">import</span> <span class="n">Graphics</span>
+
+<span class="c1"># get the graphics objects for the session</span>
+
+<span class="n">graphics_session1</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="n">mesh1</span> <span class="o">=</span> <span class="n">graphics_session1</span><span class="o">.</span><span class="n">Meshes</span><span class="p">[</span><span class="s2">&quot;mesh-1&quot;</span><span class="p">]</span>
+<span class="n">contour1</span> <span class="o">=</span> <span class="n">graphics_session1</span><span class="o">.</span><span class="n">Contours</span><span class="p">[</span><span class="s2">&quot;contour-1&quot;</span><span class="p">]</span>
+<span class="n">contour2</span> <span class="o">=</span> <span class="n">graphics_session1</span><span class="o">.</span><span class="n">Contours</span><span class="p">[</span><span class="s2">&quot;contour-2&quot;</span><span class="p">]</span>
+<span class="n">surface1</span> <span class="o">=</span> <span class="n">graphics_session1</span><span class="o">.</span><span class="n">Surfaces</span><span class="p">[</span><span class="s2">&quot;surface-1&quot;</span><span class="p">]</span>
+
+<span class="c1"># set graphics objects properties</span>
+
+<span class="c1"># mesh</span>
+<span class="n">mesh1</span><span class="o">.</span><span class="n">show_edges</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">mesh1</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;symmetry&#39;</span><span class="p">]</span>
+
+<span class="c1"># contour</span>
+<span class="n">contour1</span><span class="o">.</span><span class="n">field</span> <span class="o">=</span> <span class="s2">&quot;velocity-magnitude&quot;</span>
+<span class="n">contour1</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;symmetry&#39;</span><span class="p">]</span>
+
+<span class="n">contour2</span><span class="o">.</span><span class="n">field</span> <span class="o">=</span> <span class="s2">&quot;temperature&quot;</span>
+<span class="n">contour2</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;symmetry&#39;</span><span class="p">,</span> <span class="s1">&#39;wall&#39;</span><span class="p">]</span>
+
+<span class="c1"># copy</span>
+<span class="n">graphics_session1</span><span class="o">.</span><span class="n">Contours</span><span class="p">[</span><span class="s2">&quot;contour-3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">contour2</span><span class="p">()</span>
+
+<span class="c1"># update</span>
+<span class="n">contour3</span> <span class="o">=</span> <span class="n">graphics_session1</span><span class="o">.</span><span class="n">Contours</span><span class="p">[</span><span class="s2">&quot;contour-3&quot;</span><span class="p">]</span>
+<span class="n">contour3</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">contour1</span><span class="p">())</span>
+
+<span class="c1"># delete</span>
+<span class="k">del</span> <span class="n">graphics_session1</span><span class="o">.</span><span class="n">Contours</span><span class="p">[</span><span class="s2">&quot;contour-3&quot;</span><span class="p">]</span>
+
+<span class="c1"># loop</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">graphics_session1</span><span class="o">.</span><span class="n">Contours</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c1"># iso surface</span>
+<span class="n">surface1</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">iso_surface</span><span class="o">.</span><span class="n">field</span><span class="o">=</span> <span class="s2">&quot;velocity-magnitude&quot;</span>
+<span class="n">surface1</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">iso_surface</span><span class="o">.</span><span class="n">rendering</span><span class="o">=</span> <span class="s2">&quot;contour&quot;</span>
+
+<span class="c1"># display</span>
+<span class="n">contour1</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+<span class="n">mesh1</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+<span class="n">surface1</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+
+<span class="c1"># To display in specific window e.g. window-2</span>
+<span class="n">contour1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="matplotlib-example-xyplots">
+<h2>MatplotLib Example (XYPlots)<a class="headerlink" href="#matplotlib-example-xyplots" title="Permalink to this headline">¶</a></h2>
+<p>Here the plot data is extracted from the Fluent session into the Python
+environment and data is plotted in MatplotLib.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import module</span>
+<span class="kn">from</span> <span class="nn">ansys.fluent.post.matplotlib</span> <span class="kn">import</span> <span class="n">Plots</span>
+
+<span class="c1"># get the plots object for the session</span>
+<span class="n">plots_session1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+
+<span class="c1">#get xyplot object</span>
+<span class="n">plot1</span> <span class="o">=</span> <span class="n">plots_session1</span><span class="o">.</span><span class="n">XYPlots</span><span class="p">[</span><span class="s2">&quot;plot-1&quot;</span><span class="p">]</span>
+
+<span class="c1">#set properties</span>
+<span class="n">plot1</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;symmetry&quot;</span><span class="p">]</span>
+<span class="n">plot1</span><span class="o">.</span><span class="n">y_axis_function</span> <span class="o">=</span> <span class="s2">&quot;temperature&quot;</span>
+
+<span class="c1">#Draw plot</span>
+<span class="n">plot1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;window-1&quot;</span><span class="p">)</span>
+
+<span class="n">session</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
