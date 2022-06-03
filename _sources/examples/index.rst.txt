@@ -29,20 +29,20 @@ Add examples here for PyFluent ``ansys-fluent-visualization``.
 
 .. _sphx_glr_examples_00-postprocessing:
 
-Post Processing Examples
+Postprocessing Examples
 ========================
-These examples demonstrate how to the PyVista package to post process Fluent
+These examples demonstrate how to use the PyVista package to postprocess Fluent
 results.
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to do the following:">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates postprocessing using pyvista">
 
 .. only:: html
 
  .. figure:: /examples/00-postprocessing/images/thumb/sphx_glr_post_processing_exhaust_manifold_thumb.png
-     :alt: Post Processing using PyVista and Matplotlib: Exhaust Manifold
+     :alt: Postprocessing using PyVista and Matplotlib
 
      :ref:`sphx_glr_examples_00-postprocessing_post_processing_exhaust_manifold.py`
 

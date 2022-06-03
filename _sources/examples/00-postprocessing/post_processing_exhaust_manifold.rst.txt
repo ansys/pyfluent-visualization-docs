@@ -19,27 +19,41 @@
 
 .. _ref_post_processing_exhaust_manifold:
 
-Post Processing using PyVista and Matplotlib: Exhaust Manifold
---------------------------------------------------------------
+Postprocessing using PyVista and Matplotlib
+---------------------------------------------
 This example demonstrates the postprocessing capabilities of PyFluent
 (using PyVista and Matplotlib) using a 3D model
 of an exhaust manifold with high temperature flows passing through.
 The flow through the manifold is turbulent and
 involves conjugate heat transfer.
 
-This example demonstrates how to do the following:
+This example demonstrates postprocessing using pyvista
 
 - Create surfaces for the display of 3D data.
 - Display filled contours of temperature on several surfaces.
 - Display velocity vectors.
 - Plot quantitative results using Matplotlib
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-27
+.. GENERATED FROM PYTHON SOURCE LINES 18-20
+
+.. code-block:: default
+
+    # sphinx_gallery_thumbnail_number = -3
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 21-30
 
 .. code-block:: default
 
     import ansys.fluent.core as pyfluent
     from ansys.fluent.core import examples
+
     from ansys.fluent.post import set_config
     from ansys.fluent.post.matplotlib import Plots
     from ansys.fluent.post.pyvista import Graphics
@@ -53,12 +67,12 @@ This example demonstrates how to do the following:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-30
+.. GENERATED FROM PYTHON SOURCE LINES 31-33
 
 First, download the case and data file and start Fluent as a service with
 Meshing mode, double precision, number of processors: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-44
+.. GENERATED FROM PYTHON SOURCE LINES 33-47
 
 .. code-block:: default
 
@@ -71,7 +85,7 @@ Meshing mode, double precision, number of processors: 2
         filename="exhaust_system.dat.h5", directory="pyfluent/exhaust_system"
     )
 
-    session = pyfluent.launch_fluent(precision="double", processor_count=4)
+    session = pyfluent.launch_fluent(precision="double", processor_count=2)
 
     session.solver.tui.file.read_case(case_file_name=import_case)
     session.solver.tui.file.read_data(case_file_name=import_data)
@@ -80,14 +94,88 @@ Meshing mode, double precision, number of processors: 2
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    Fast-loading "/ansys_inc/v222/fluent/fluent22.2.0/addons/afd/lib/hdfio.bin"
+    Done.
+
+    Reading from cd3acb5704e9:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5" in NODE0 mode ...
+      Reading mesh ...
+          288590 cells,     2 cell zones ...
+             201658 polyhedra cells,  zone id: 815
+              86932 polyhedra cells,  zone id: 818
+         1795387 faces,    13 face zones ...
+             454038 polygonal interior faces,  zone id: 817
+            1258889 polygonal interior faces,  zone id: 814
+                275 polygonal pressure-outlet faces,  zone id: 559
+                261 polygonal velocity-inlet faces,  zone id: 463
+                265 polygonal velocity-inlet faces,  zone id: 367
+                262 polygonal velocity-inlet faces,  zone id: 272
+              51846 polygonal wall faces,  zone id: 226
+              13399 polygonal wall faces,  zone id: 830
+              13399 polygonal wall faces,  zone id: 2
+                724 polygonal wall faces,  zone id: 181
+                676 polygonal wall faces,  zone id: 180
+                678 polygonal wall faces,  zone id: 179
+                675 polygonal wall faces,  zone id: 178
+         1408040 nodes,     1 node zone  ...
+    Warning: reading 4 partition grid onto 2 compute node machine.
+             Combining every 2 partitions.
+      Done.
+
+
+    Building...
+         mesh
+            distributing mesh
+                    pairs..,
+                    parts..,
+                    faces..,
+                    nodes..,
+                    shadow nodes..,
+                    cells..,
+            bandwidth reduction using Reverse Cuthill-McKee: 80788/4398 = 18.3693
+         materials,
+         interface,
+         domains,
+            mixture
+         zones,
+            solid_up:1:830-shadow
+            interior--fluid1
+            interior--solid_up
+            outlet
+            inlet2
+            inlet1
+            inlet
+            solid_up:1
+            solid_up:1:830
+            out1
+            in3
+            in2
+            in1
+            fluid1
+            solid_up
+         parallel,
+    Done.
+
+    Reading from cd3acb5704e9:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5" in NODE0 mode ...
+
+
+      Reading results.
+    Parallel variables...
+    Done.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-46
+
+.. GENERATED FROM PYTHON SOURCE LINES 48-49
 
 Get the graphics object for mesh display
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-49
+.. GENERATED FROM PYTHON SOURCE LINES 49-52
 
 .. code-block:: default
 
@@ -101,11 +189,11 @@ Get the graphics object for mesh display
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-51
+.. GENERATED FROM PYTHON SOURCE LINES 53-54
 
 Create a graphics object for mesh display
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-54
+.. GENERATED FROM PYTHON SOURCE LINES 54-57
 
 .. code-block:: default
 
@@ -119,11 +207,11 @@ Create a graphics object for mesh display
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-56
+.. GENERATED FROM PYTHON SOURCE LINES 58-59
 
 Show edges and faces
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-60
+.. GENERATED FROM PYTHON SOURCE LINES 59-63
 
 .. code-block:: default
 
@@ -138,11 +226,11 @@ Show edges and faces
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-62
+.. GENERATED FROM PYTHON SOURCE LINES 64-65
 
 Get the surfaces list
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-74
+.. GENERATED FROM PYTHON SOURCE LINES 65-77
 
 .. code-block:: default
 
@@ -170,11 +258,11 @@ Get the surfaces list
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-76
+.. GENERATED FROM PYTHON SOURCE LINES 78-79
 
 Disable edges and display again
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-80
+.. GENERATED FROM PYTHON SOURCE LINES 79-83
 
 .. code-block:: default
 
@@ -194,11 +282,11 @@ Disable edges and display again
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-82
+.. GENERATED FROM PYTHON SOURCE LINES 84-85
 
 Create iso-surface on the outlet plane
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-90
+.. GENERATED FROM PYTHON SOURCE LINES 85-93
 
 .. code-block:: default
 
@@ -219,14 +307,22 @@ Create iso-surface on the outlet plane
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    range [-125.0188, 2.4751942e-09]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-92
+
+.. GENERATED FROM PYTHON SOURCE LINES 94-95
 
 Create iso-surface on the mid-plane (Issue # 276)
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-100
+.. GENERATED FROM PYTHON SOURCE LINES 95-103
 
 .. code-block:: default
 
@@ -247,14 +343,22 @@ Create iso-surface on the mid-plane (Issue # 276)
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    range [-362.71505, 13.458935]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-102
+
+.. GENERATED FROM PYTHON SOURCE LINES 104-105
 
 Temperature contour on the mid-plane and the outlet
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-108
+.. GENERATED FROM PYTHON SOURCE LINES 105-111
 
 .. code-block:: default
 
@@ -273,14 +377,23 @@ Temperature contour on the mid-plane and the outlet
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    range [-362.71505, 13.458935]
+    range [-125.0188, 2.4751942e-09]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-110
+
+.. GENERATED FROM PYTHON SOURCE LINES 112-113
 
 Contour plot of temperature on the manifold
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-123
+.. GENERATED FROM PYTHON SOURCE LINES 113-126
 
 .. code-block:: default
 
@@ -309,19 +422,19 @@ Contour plot of temperature on the manifold
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 124-126
+.. GENERATED FROM PYTHON SOURCE LINES 127-129
 
 Vector on the mid-plane
 Currently using outlet-plane since mid-plane is affected by Issue # 276
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-132
+.. GENERATED FROM PYTHON SOURCE LINES 129-135
 
 .. code-block:: default
 
 
     velocity_vector = graphics.Vectors["velocity-vector"]
-    velocity_vector.surfaces_list = ["outlet-plane"]
-    velocity_vector.scale = 1
+    velocity_vector.surfaces_list = ["solid_up:1:830"]
+    velocity_vector.scale = 2
     velocity_vector.display("window-6")
 
 
@@ -336,12 +449,12 @@ Currently using outlet-plane since mid-plane is affected by Issue # 276
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-135
+.. GENERATED FROM PYTHON SOURCE LINES 136-138
 
 Commenting out due to issue #290
 Start the Plot Object for the session
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-137
+.. GENERATED FROM PYTHON SOURCE LINES 138-140
 
 .. code-block:: default
 
@@ -354,11 +467,11 @@ Start the Plot Object for the session
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-139
+.. GENERATED FROM PYTHON SOURCE LINES 141-142
 
 Create a default XY-Plot
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-141
+.. GENERATED FROM PYTHON SOURCE LINES 142-144
 
 .. code-block:: default
 
@@ -371,11 +484,11 @@ Create a default XY-Plot
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-143
+.. GENERATED FROM PYTHON SOURCE LINES 145-146
 
 Set the surface on which the plot is plotted and the Y-axis function
 
-.. GENERATED FROM PYTHON SOURCE LINES 143-146
+.. GENERATED FROM PYTHON SOURCE LINES 146-149
 
 .. code-block:: default
 
@@ -389,15 +502,16 @@ Set the surface on which the plot is plotted and the Y-axis function
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-148
+.. GENERATED FROM PYTHON SOURCE LINES 150-151
 
 Plot the created XY-Plot
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-149
+.. GENERATED FROM PYTHON SOURCE LINES 151-153
 
 .. code-block:: default
 
     plot_1.plot("window-7")
+
 
 
 
@@ -410,10 +524,27 @@ Plot the created XY-Plot
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 154-155
+
+Close Fluent
+
+.. GENERATED FROM PYTHON SOURCE LINES 155-157
+
+.. code-block:: default
+
+
+    session.exit()
+
+
+
+
+
+
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  35.037 seconds)
+   **Total running time of the script:** ( 0 minutes  38.337 seconds)
 
 
 .. _sphx_glr_download_examples_00-postprocessing_post_processing_exhaust_manifold.py:
