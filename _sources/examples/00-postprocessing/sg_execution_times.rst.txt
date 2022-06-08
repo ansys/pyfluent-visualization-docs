@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:38.337** total execution time for **examples_00-postprocessing** files:
+**00:39.667** total execution time for **examples_00-postprocessing** files:
 
 +--------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_00-postprocessing_post_processing_exhaust_manifold.py` (``post_processing_exhaust_manifold.py``) | 00:38.337 | 0.0 MB |
+| :ref:`sphx_glr_examples_00-postprocessing_post_processing_exhaust_manifold.py` (``post_processing_exhaust_manifold.py``) | 00:39.667 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------+-----------+--------+

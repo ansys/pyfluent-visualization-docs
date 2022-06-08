@@ -14,6 +14,9 @@
       :toctree:
    
       
+      
+      Graphics.add_outline_mesh
+      
    
    
 

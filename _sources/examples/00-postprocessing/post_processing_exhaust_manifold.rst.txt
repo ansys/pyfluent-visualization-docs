@@ -103,7 +103,7 @@ Meshing mode, double precision, number of processors: 2
     Fast-loading "/ansys_inc/v222/fluent/fluent22.2.0/addons/afd/lib/hdfio.bin"
     Done.
 
-    Reading from cd3acb5704e9:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5" in NODE0 mode ...
+    Reading from a3c36435ecbf:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5" in NODE0 mode ...
       Reading mesh ...
           288590 cells,     2 cell zones ...
              201658 polyhedra cells,  zone id: 815
@@ -161,7 +161,7 @@ Meshing mode, double precision, number of processors: 2
          parallel,
     Done.
 
-    Reading from cd3acb5704e9:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5" in NODE0 mode ...
+    Reading from a3c36435ecbf:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5" in NODE0 mode ...
 
 
       Reading results.
@@ -314,6 +314,8 @@ Create iso-surface on the outlet plane
  .. code-block:: none
 
     range [-125.0188, 2.4751942e-09]
+    range [-125.0188, 2.4751942e-09]
+    Invalid surface.
 
 
 
@@ -350,6 +352,8 @@ Create iso-surface on the mid-plane (Issue # 276)
  .. code-block:: none
 
     range [-362.71505, 13.458935]
+    range [-362.71505, 13.458935]
+    Invalid surface.
 
 
 
@@ -544,7 +548,7 @@ Close Fluent
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  38.337 seconds)
+   **Total running time of the script:** ( 0 minutes  39.667 seconds)
 
 
 .. _sphx_glr_download_examples_00-postprocessing_post_processing_exhaust_manifold.py:
