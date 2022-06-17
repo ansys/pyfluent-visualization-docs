@@ -1,0 +1,35 @@
+﻿ansys.fluent.visualization.pyvista.pyvista\_objects.Surface
+===========================================================
+
+.. currentmodule:: ansys.fluent.visualization.pyvista.pyvista_objects
+
+.. autoclass:: Surface
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      Surface.display
+      
+      
+      Surface.update
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
