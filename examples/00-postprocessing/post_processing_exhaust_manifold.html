@@ -284,7 +284,7 @@ Meshing mode, double precision, number of processors: 2</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fast-loading &quot;/ansys_inc/v222/fluent/fluent22.2.0/addons/afd/lib/hdfio.bin&quot;
 Done.
 
-Reading from 44a80a0ea3b8:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5&quot; in NODE0 mode ...
+Reading from 6de93733a655:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5&quot; in NODE0 mode ...
   Reading mesh ...
       288590 cells,     2 cell zones ...
          201658 polyhedra cells,  zone id: 815
@@ -342,7 +342,7 @@ Building...
      parallel,
 Done.
 
-Reading from 44a80a0ea3b8:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5&quot; in NODE0 mode ...
+Reading from 6de93733a655:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5&quot; in NODE0 mode ...
 
 
   Reading results.
@@ -466,22 +466,20 @@ Start the Plot Object for the session</p>
 </pre></div>
 </div>
 <p>Create a default XY-Plot</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot_1</span> <span class="o">=</span> <span class="n">plots_session_1</span><span class="o">.</span><span class="n">XYPlots</span><span class="p">[</span><span class="s2">&quot;plot-1&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xy_plot</span> <span class="o">=</span> <span class="n">plots_session_1</span><span class="o">.</span><span class="n">XYPlots</span><span class="p">[</span><span class="s2">&quot;xy-plot&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Set the surface on which the plot is plotted and the Y-axis function</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot_1</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;outlet&quot;</span><span class="p">]</span>
-<span class="n">plot_1</span><span class="o">.</span><span class="n">y_axis_function</span> <span class="o">=</span> <span class="s2">&quot;temperature&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xy_plot</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;outlet&quot;</span><span class="p">]</span>
+<span class="n">xy_plot</span><span class="o">.</span><span class="n">y_axis_function</span> <span class="o">=</span> <span class="s2">&quot;temperature&quot;</span>
 </pre></div>
 </div>
 <p>Plot the created XY-Plot</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot_1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;window-7&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xy_plot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;window-7&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_post_processing_exhaust_manifold_009.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_009.png" alt="XY Plot" class = "sphx-glr-single-img"/><p>Plot residual</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local_surfaces_provider</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">(</span><span class="n">session</span><span class="p">)</span><span class="o">.</span><span class="n">Surfaces</span>
-<span class="n">matplotlib_plots1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">local_surfaces_provider</span><span class="o">=</span><span class="n">local_surfaces_provider</span><span class="p">)</span>
-<span class="n">session</span><span class="o">.</span><span class="n">monitors_manager</span><span class="o">.</span><span class="n">get_monitor_set_names</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matplotlib_plots1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 <span class="n">residual</span> <span class="o">=</span> <span class="n">matplotlib_plots1</span><span class="o">.</span><span class="n">Monitors</span><span class="p">[</span><span class="s2">&quot;residual&quot;</span><span class="p">]</span>
 <span class="n">residual</span><span class="o">.</span><span class="n">monitor_set_name</span> <span class="o">=</span> <span class="s2">&quot;residual&quot;</span>
 <span class="n">residual</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;window-8&quot;</span><span class="p">)</span>
@@ -491,7 +489,7 @@ Start the Plot Object for the session</p>
 <span class="n">session</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_010.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_010.png" alt="residual" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  52.017 seconds)</p>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_010.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_010.png" alt="residual" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  52.290 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-postprocessing-post-processing-exhaust-manifold-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9a025ab8fd5ec8428ac9b49a6901877e/post_processing_exhaust_manifold.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">post_processing_exhaust_manifold.py</span></code></a></p>

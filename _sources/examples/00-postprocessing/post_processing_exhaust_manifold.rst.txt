@@ -103,7 +103,7 @@ Meshing mode, double precision, number of processors: 2
     Fast-loading "/ansys_inc/v222/fluent/fluent22.2.0/addons/afd/lib/hdfio.bin"
     Done.
 
-    Reading from 44a80a0ea3b8:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5" in NODE0 mode ...
+    Reading from 6de93733a655:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5" in NODE0 mode ...
       Reading mesh ...
           288590 cells,     2 cell zones ...
              201658 polyhedra cells,  zone id: 815
@@ -161,7 +161,7 @@ Meshing mode, double precision, number of processors: 2
          parallel,
     Done.
 
-    Reading from 44a80a0ea3b8:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5" in NODE0 mode ...
+    Reading from 6de93733a655:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5" in NODE0 mode ...
 
 
       Reading results.
@@ -517,7 +517,7 @@ Create a default XY-Plot
 
 .. code-block:: default
 
-    plot_1 = plots_session_1.XYPlots["plot-1"]
+    xy_plot = plots_session_1.XYPlots["xy-plot"]
 
 
 
@@ -534,8 +534,8 @@ Set the surface on which the plot is plotted and the Y-axis function
 
 .. code-block:: default
 
-    plot_1.surfaces_list = ["outlet"]
-    plot_1.y_axis_function = "temperature"
+    xy_plot.surfaces_list = ["outlet"]
+    xy_plot.y_axis_function = "temperature"
 
 
 
@@ -552,7 +552,7 @@ Plot the created XY-Plot
 
 .. code-block:: default
 
-    plot_1.plot("window-7")
+    xy_plot.plot("window-7")
 
 
 
@@ -570,14 +570,12 @@ Plot the created XY-Plot
 
 Plot residual
 
-.. GENERATED FROM PYTHON SOURCE LINES 165-176
+.. GENERATED FROM PYTHON SOURCE LINES 165-174
 
 .. code-block:: default
 
 
-    local_surfaces_provider = Graphics(session).Surfaces
-    matplotlib_plots1 = Plots(session, local_surfaces_provider=local_surfaces_provider)
-    session.monitors_manager.get_monitor_set_names()
+    matplotlib_plots1 = Plots(session)
     residual = matplotlib_plots1.Monitors["residual"]
     residual.monitor_set_name = "residual"
     residual.plot("window-8")
@@ -600,7 +598,7 @@ Plot residual
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  52.017 seconds)
+   **Total running time of the script:** ( 0 minutes  52.290 seconds)
 
 
 .. _sphx_glr_download_examples_00-postprocessing_post_processing_exhaust_manifold.py:
