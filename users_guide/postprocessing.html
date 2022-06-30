@@ -253,6 +253,11 @@
      Displaying XY Plots
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-residual">
+     Plotting Residual
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -374,6 +379,18 @@ The following graphics operations are supported.</p>
 <span class="n">plot_1</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;outlet&quot;</span><span class="p">]</span>
 <span class="n">plot_1</span><span class="o">.</span><span class="n">y_axis_function</span> <span class="o">=</span> <span class="s2">&quot;temperature&quot;</span>
 <span class="n">plot_1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;window-5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="plotting-residual">
+<h3>Plotting Residual<a class="headerlink" href="#plotting-residual" title="Permalink to this headline">#</a></h3>
+<p>The following example demonstrates how you can plot solution residual:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">local_surfaces_provider</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">(</span><span class="n">session</span><span class="p">)</span><span class="o">.</span><span class="n">Surfaces</span>
+<span class="n">matplotlib_plots1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">local_surfaces_provider</span><span class="o">=</span><span class="n">local_surfaces_provider</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">monitors_manager</span><span class="o">.</span><span class="n">get_monitor_set_names</span><span class="p">()</span>
+<span class="n">residual</span> <span class="o">=</span> <span class="n">matplotlib_plots1</span><span class="o">.</span><span class="n">Monitors</span><span class="p">[</span><span class="s2">&quot;residual&quot;</span><span class="p">]</span>
+<span class="n">residual</span><span class="o">.</span><span class="n">monitor_set_name</span> <span class="o">=</span> <span class="s2">&quot;residual&quot;</span>
+<span class="n">residual</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;window-6&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
