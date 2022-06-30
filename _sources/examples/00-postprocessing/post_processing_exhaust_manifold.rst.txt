@@ -103,7 +103,7 @@ Meshing mode, double precision, number of processors: 2
     Fast-loading "/ansys_inc/v222/fluent/fluent22.2.0/addons/afd/lib/hdfio.bin"
     Done.
 
-    Reading from 12732628a30f:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5" in NODE0 mode ...
+    Reading from 44a80a0ea3b8:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5" in NODE0 mode ...
       Reading mesh ...
           288590 cells,     2 cell zones ...
              201658 polyhedra cells,  zone id: 815
@@ -161,7 +161,7 @@ Meshing mode, double precision, number of processors: 2
          parallel,
     Done.
 
-    Reading from 12732628a30f:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5" in NODE0 mode ...
+    Reading from 44a80a0ea3b8:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5" in NODE0 mode ...
 
 
       Reading results.
@@ -209,15 +209,14 @@ Create a graphics object for mesh display
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-59
 
-Show edges and faces
+Show edges
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-63
+.. GENERATED FROM PYTHON SOURCE LINES 59-62
 
 .. code-block:: default
 
 
     mesh1.show_edges = True
-    mesh1.show_faces = True
 
 
 
@@ -226,11 +225,11 @@ Show edges and faces
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-65
+.. GENERATED FROM PYTHON SOURCE LINES 63-64
 
 Get the surfaces list
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-77
+.. GENERATED FROM PYTHON SOURCE LINES 64-76
 
 .. code-block:: default
 
@@ -258,11 +257,11 @@ Get the surfaces list
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-79
+.. GENERATED FROM PYTHON SOURCE LINES 77-78
 
 Disable edges and display again
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-83
+.. GENERATED FROM PYTHON SOURCE LINES 78-82
 
 .. code-block:: default
 
@@ -282,11 +281,11 @@ Disable edges and display again
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-85
+.. GENERATED FROM PYTHON SOURCE LINES 83-84
 
 Create iso-surface on the outlet plane
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-93
+.. GENERATED FROM PYTHON SOURCE LINES 84-92
 
 .. code-block:: default
 
@@ -320,11 +319,11 @@ Create iso-surface on the outlet plane
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-95
+.. GENERATED FROM PYTHON SOURCE LINES 93-94
 
-Create iso-surface on the mid-plane (Issue # 276)
+Create iso-surface on the mid-plane
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-103
+.. GENERATED FROM PYTHON SOURCE LINES 94-102
 
 .. code-block:: default
 
@@ -358,19 +357,22 @@ Create iso-surface on the mid-plane (Issue # 276)
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-105
+.. GENERATED FROM PYTHON SOURCE LINES 103-104
 
-Temperature contour on the mid-plane and the outlet
+Create iso-surface using the velocity magnitude
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-111
+.. GENERATED FROM PYTHON SOURCE LINES 104-113
 
 .. code-block:: default
 
 
-    temperature_contour = graphics.Contours["contour-temperature"]
-    temperature_contour.field = "temperature"
-    temperature_contour.surfaces_list = ["mid-plane-x", "outlet-plane"]
-    temperature_contour.display("window-4")
+    surf_vel_contour = graphics.Surfaces["surf-vel-contour"]
+    surf_vel_contour.surface.type = "iso-surface"
+    iso_surf3 = surf_vel_contour.surface.iso_surface
+    iso_surf3.field = "velocity-magnitude"
+    iso_surf3.rendering = "contour"
+    iso_surf3.iso_value = 0.0
+    surf_vel_contour.display("window-5")
 
 
 
@@ -387,17 +389,53 @@ Temperature contour on the mid-plane and the outlet
 
  .. code-block:: none
 
+    range [0, 39.720194]
+    range [0, 39.720194]
+    Invalid surface.
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 114-115
+
+Temperature contour on the mid-plane and the outlet
+
+.. GENERATED FROM PYTHON SOURCE LINES 115-121
+
+.. code-block:: default
+
+
+    temperature_contour = graphics.Contours["contour-temperature"]
+    temperature_contour.field = "temperature"
+    temperature_contour.surfaces_list = ["mid-plane-x", "outlet-plane"]
+    temperature_contour.display("window-4")
+
+
+
+
+.. image-sg:: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_006.png
+   :alt: post processing exhaust manifold
+   :srcset: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_006.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
     range [-362.71505, 13.458935]
     range [-125.0188, 2.4751942e-09]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-113
+.. GENERATED FROM PYTHON SOURCE LINES 122-123
 
 Contour plot of temperature on the manifold
 
-.. GENERATED FROM PYTHON SOURCE LINES 113-126
+.. GENERATED FROM PYTHON SOURCE LINES 123-136
 
 .. code-block:: default
 
@@ -417,21 +455,21 @@ Contour plot of temperature on the manifold
 
 
 
-.. image-sg:: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_006.png
+.. image-sg:: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_007.png
    :alt: post processing exhaust manifold
-   :srcset: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_006.png
+   :srcset: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_007.png
    :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-129
+.. GENERATED FROM PYTHON SOURCE LINES 137-139
 
 Vector on the mid-plane
 Currently using outlet-plane since mid-plane is affected by Issue # 276
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-135
+.. GENERATED FROM PYTHON SOURCE LINES 139-145
 
 .. code-block:: default
 
@@ -444,21 +482,21 @@ Currently using outlet-plane since mid-plane is affected by Issue # 276
 
 
 
-.. image-sg:: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_007.png
+.. image-sg:: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_008.png
    :alt: post processing exhaust manifold
-   :srcset: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_007.png
+   :srcset: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_008.png
    :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-138
+.. GENERATED FROM PYTHON SOURCE LINES 146-148
 
 Commenting out due to issue #290
 Start the Plot Object for the session
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-140
+.. GENERATED FROM PYTHON SOURCE LINES 148-150
 
 .. code-block:: default
 
@@ -471,11 +509,11 @@ Start the Plot Object for the session
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-142
+.. GENERATED FROM PYTHON SOURCE LINES 151-152
 
 Create a default XY-Plot
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-144
+.. GENERATED FROM PYTHON SOURCE LINES 152-154
 
 .. code-block:: default
 
@@ -488,11 +526,11 @@ Create a default XY-Plot
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-146
+.. GENERATED FROM PYTHON SOURCE LINES 155-156
 
 Set the surface on which the plot is plotted and the Y-axis function
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-149
+.. GENERATED FROM PYTHON SOURCE LINES 156-159
 
 .. code-block:: default
 
@@ -506,11 +544,11 @@ Set the surface on which the plot is plotted and the Y-axis function
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-151
+.. GENERATED FROM PYTHON SOURCE LINES 160-161
 
 Plot the created XY-Plot
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-153
+.. GENERATED FROM PYTHON SOURCE LINES 161-163
 
 .. code-block:: default
 
@@ -519,27 +557,41 @@ Plot the created XY-Plot
 
 
 
-.. image-sg:: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_008.png
+.. image-sg:: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_009.png
    :alt: XY Plot
-   :srcset: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_008.png
+   :srcset: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_009.png
    :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-155
+.. GENERATED FROM PYTHON SOURCE LINES 164-165
 
-Close Fluent
+Plot residual
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-157
+.. GENERATED FROM PYTHON SOURCE LINES 165-176
 
 .. code-block:: default
 
 
+    local_surfaces_provider = Graphics(session).Surfaces
+    matplotlib_plots1 = Plots(session, local_surfaces_provider=local_surfaces_provider)
+    session.monitors_manager.get_monitor_set_names()
+    residual = matplotlib_plots1.Monitors["residual"]
+    residual.monitor_set_name = "residual"
+    residual.plot("window-8")
+
+    # Close Fluent
+
     session.exit()
 
 
+
+.. image-sg:: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_010.png
+   :alt: residual
+   :srcset: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_010.png
+   :class: sphx-glr-single-img
 
 
 
@@ -548,7 +600,7 @@ Close Fluent
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  50.588 seconds)
+   **Total running time of the script:** ( 0 minutes  52.017 seconds)
 
 
 .. _sphx_glr_download_examples_00-postprocessing_post_processing_exhaust_manifold.py:

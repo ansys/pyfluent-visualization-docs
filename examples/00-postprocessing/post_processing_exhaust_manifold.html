@@ -284,7 +284,7 @@ Meshing mode, double precision, number of processors: 2</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fast-loading &quot;/ansys_inc/v222/fluent/fluent22.2.0/addons/afd/lib/hdfio.bin&quot;
 Done.
 
-Reading from 12732628a30f:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5&quot; in NODE0 mode ...
+Reading from 44a80a0ea3b8:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5&quot; in NODE0 mode ...
   Reading mesh ...
       288590 cells,     2 cell zones ...
          201658 polyhedra cells,  zone id: 815
@@ -342,7 +342,7 @@ Building...
      parallel,
 Done.
 
-Reading from 12732628a30f:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5&quot; in NODE0 mode ...
+Reading from 44a80a0ea3b8:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5&quot; in NODE0 mode ...
 
 
   Reading results.
@@ -358,9 +358,8 @@ Done.
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh1</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Meshes</span><span class="p">[</span><span class="s2">&quot;mesh-1&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Show edges and faces</p>
+<p>Show edges</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh1</span><span class="o">.</span><span class="n">show_edges</span> <span class="o">=</span> <span class="kc">True</span>
-<a href="https://docs.python.org/dev/library/functions.html#bool" title="builtins.bool" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh1</span><span class="o">.</span><span class="n">show_faces</span></a> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 <p>Get the surfaces list</p>
@@ -396,7 +395,7 @@ range [-125.0188, 2.4751942e-09]
 Invalid surface.
 </pre></div>
 </div>
-<p>Create iso-surface on the mid-plane (Issue # 276)</p>
+<p>Create iso-surface on the mid-plane</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">surf_mid_plane_x</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Surfaces</span><span class="p">[</span><span class="s2">&quot;mid-plane-x&quot;</span><span class="p">]</span>
 <span class="n">surf_mid_plane_x</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;iso-surface&quot;</span>
 <span class="n">iso_surf2</span> <span class="o">=</span> <span class="n">surf_mid_plane_x</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">iso_surface</span>
@@ -411,6 +410,22 @@ range [-362.71505, 13.458935]
 Invalid surface.
 </pre></div>
 </div>
+<p>Create iso-surface using the velocity magnitude</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">surf_vel_contour</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Surfaces</span><span class="p">[</span><span class="s2">&quot;surf-vel-contour&quot;</span><span class="p">]</span>
+<span class="n">surf_vel_contour</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;iso-surface&quot;</span>
+<span class="n">iso_surf3</span> <span class="o">=</span> <span class="n">surf_vel_contour</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">iso_surface</span>
+<span class="n">iso_surf3</span><span class="o">.</span><span class="n">field</span> <span class="o">=</span> <span class="s2">&quot;velocity-magnitude&quot;</span>
+<span class="n">iso_surf3</span><span class="o">.</span><span class="n">rendering</span> <span class="o">=</span> <span class="s2">&quot;contour&quot;</span>
+<span class="n">iso_surf3</span><span class="o">.</span><span class="n">iso_value</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">surf_vel_contour</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_005.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_005.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>range [0, 39.720194]
+range [0, 39.720194]
+Invalid surface.
+</pre></div>
+</div>
 <p>Temperature contour on the mid-plane and the outlet</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_contour</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Contours</span><span class="p">[</span><span class="s2">&quot;contour-temperature&quot;</span><span class="p">]</span>
 <span class="n">temperature_contour</span><span class="o">.</span><span class="n">field</span> <span class="o">=</span> <span class="s2">&quot;temperature&quot;</span>
@@ -418,7 +433,7 @@ Invalid surface.
 <span class="n">temperature_contour</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-4&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_005.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_005.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_006.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_006.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>range [-362.71505, 13.458935]
 range [-125.0188, 2.4751942e-09]
 </pre></div>
@@ -437,7 +452,7 @@ range [-125.0188, 2.4751942e-09]
 <span class="n">temperature_contour_manifold</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-5&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_006.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_006.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p>Vector on the mid-plane
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_007.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_007.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p>Vector on the mid-plane
 Currently using outlet-plane since mid-plane is affected by Issue # 276</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">velocity_vector</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Vectors</span><span class="p">[</span><span class="s2">&quot;velocity-vector&quot;</span><span class="p">]</span>
 <span class="n">velocity_vector</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;solid_up:1:830&quot;</span><span class="p">]</span>
@@ -445,7 +460,7 @@ Currently using outlet-plane since mid-plane is affected by Issue # 276</p>
 <span class="n">velocity_vector</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-6&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_007.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_007.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p>Commenting out due to issue #290
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_008.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_008.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p>Commenting out due to issue #290
 Start the Plot Object for the session</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plots_session_1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 </pre></div>
@@ -463,11 +478,20 @@ Start the Plot Object for the session</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot_1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;window-7&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_008.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_008.png" alt="XY Plot" class = "sphx-glr-single-img"/><p>Close Fluent</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">session</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_009.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_009.png" alt="XY Plot" class = "sphx-glr-single-img"/><p>Plot residual</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local_surfaces_provider</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">(</span><span class="n">session</span><span class="p">)</span><span class="o">.</span><span class="n">Surfaces</span>
+<span class="n">matplotlib_plots1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">local_surfaces_provider</span><span class="o">=</span><span class="n">local_surfaces_provider</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">monitors_manager</span><span class="o">.</span><span class="n">get_monitor_set_names</span><span class="p">()</span>
+<span class="n">residual</span> <span class="o">=</span> <span class="n">matplotlib_plots1</span><span class="o">.</span><span class="n">Monitors</span><span class="p">[</span><span class="s2">&quot;residual&quot;</span><span class="p">]</span>
+<span class="n">residual</span><span class="o">.</span><span class="n">monitor_set_name</span> <span class="o">=</span> <span class="s2">&quot;residual&quot;</span>
+<span class="n">residual</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;window-8&quot;</span><span class="p">)</span>
+
+<span class="c1"># Close Fluent</span>
+
+<span class="n">session</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  50.588 seconds)</p>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_010.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_010.png" alt="residual" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  52.017 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-postprocessing-post-processing-exhaust-manifold-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9a025ab8fd5ec8428ac9b49a6901877e/post_processing_exhaust_manifold.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">post_processing_exhaust_manifold.py</span></code></a></p>
