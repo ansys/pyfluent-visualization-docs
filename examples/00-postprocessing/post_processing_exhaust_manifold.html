@@ -284,7 +284,7 @@ Meshing mode, double precision, number of processors: 2</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fast-loading &quot;/ansys_inc/v222/fluent/fluent22.2.0/addons/afd/lib/hdfio.bin&quot;
 Done.
 
-Reading from a1401418cdec:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5&quot; in NODE0 mode ...
+Reading from 8270eb8da008:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5&quot; in NODE0 mode ...
   Reading mesh ...
       288590 cells,     2 cell zones ...
          201658 polyhedra cells,  zone id: 815
@@ -340,7 +340,7 @@ Building...
      parallel,
 Done.
 
-Reading from a1401418cdec:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5&quot; in NODE0 mode ...
+Reading from 8270eb8da008:&quot;/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5&quot; in NODE0 mode ...
 
 
   Reading results.
@@ -378,7 +378,43 @@ Done.
 <span class="n">mesh1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-2&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_002.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_002.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p>Create iso-surface on the outlet plane</p>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_002.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_002.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p>Create plane-surface XY plane</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">surf_xy_plane</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Surfaces</span><span class="p">[</span><span class="s2">&quot;xy-plane&quot;</span><span class="p">]</span>
+<span class="n">surf_xy_plane</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;plane-surface&quot;</span>
+<span class="n">plane_surface_xy</span> <span class="o">=</span> <span class="n">surf_xy_plane</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">plane_surface</span>
+<a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">plane_surface_xy</span><span class="o">.</span><span class="n">z</span></a> <span class="o">=</span> <span class="o">-</span><span class="mf">0.0441921</span>
+<span class="n">surf_xy_plane</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_003.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_003.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Invalid surface.
+</pre></div>
+</div>
+<p>Create plane-surface YZ plane</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">surf_yz_plane</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Surfaces</span><span class="p">[</span><span class="s2">&quot;yz-plane&quot;</span><span class="p">]</span>
+<span class="n">surf_yz_plane</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;plane-surface&quot;</span>
+<span class="n">plane_surface_yz</span> <span class="o">=</span> <span class="n">surf_yz_plane</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">plane_surface</span>
+<a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">plane_surface_yz</span><span class="o">.</span><span class="n">x</span></a> <span class="o">=</span> <span class="o">-</span><span class="mf">0.174628</span>
+<span class="n">surf_yz_plane</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-4&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_004.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_004.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Invalid surface.
+</pre></div>
+</div>
+<p>Create plane-surface ZX plane</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">surf_zx_plane</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Surfaces</span><span class="p">[</span><span class="s2">&quot;zx-plane&quot;</span><span class="p">]</span>
+<span class="n">surf_zx_plane</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;plane-surface&quot;</span>
+<span class="n">plane_surface_zx</span> <span class="o">=</span> <span class="n">surf_zx_plane</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">plane_surface</span>
+<a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">plane_surface_zx</span><span class="o">.</span><span class="n">y</span></a> <span class="o">=</span> <span class="o">-</span><span class="mf">0.0627297</span>
+<span class="n">surf_zx_plane</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_005.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_005.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Invalid surface.
+</pre></div>
+</div>
+<p>Create iso-surface on the outlet plane</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">surf_outlet_plane</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Surfaces</span><span class="p">[</span><span class="s2">&quot;outlet-plane&quot;</span><span class="p">]</span>
 <span class="n">surf_outlet_plane</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;iso-surface&quot;</span>
 <span class="n">iso_surf1</span> <span class="o">=</span> <span class="n">surf_outlet_plane</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">iso_surface</span>
@@ -387,7 +423,7 @@ Done.
 <span class="n">surf_outlet_plane</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-3&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_003.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_003.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_006.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_006.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>range [-125.0188, 2.4751942e-09]
 range [-125.0188, 2.4751942e-09]
 Invalid surface.
@@ -402,7 +438,7 @@ Invalid surface.
 <span class="n">surf_mid_plane_x</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-4&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_004.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_004.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_007.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_007.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>range [-362.71505, 13.458935]
 range [-362.71505, 13.458935]
 Invalid surface.
@@ -418,7 +454,7 @@ Invalid surface.
 <span class="n">surf_vel_contour</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-5&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_005.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_005.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_008.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_008.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>range [0, 39.720055]
 range [0, 39.720055]
 Invalid surface.
@@ -431,7 +467,7 @@ Invalid surface.
 <span class="n">temperature_contour</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-4&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_006.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_006.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_009.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_009.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>range [-362.71505, 13.458935]
 range [-125.0188, 2.4751942e-09]
 </pre></div>
@@ -450,7 +486,7 @@ range [-125.0188, 2.4751942e-09]
 <span class="n">temperature_contour_manifold</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-5&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_007.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_007.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p>Vector on the mid-plane
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_010.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_010.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p>Vector on the mid-plane
 Currently using outlet-plane since mid-plane is affected by Issue # 276</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">velocity_vector</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Vectors</span><span class="p">[</span><span class="s2">&quot;velocity-vector&quot;</span><span class="p">]</span>
 <span class="n">velocity_vector</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;solid_up:1:830&quot;</span><span class="p">]</span>
@@ -458,7 +494,7 @@ Currently using outlet-plane since mid-plane is affected by Issue # 276</p>
 <span class="n">velocity_vector</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-6&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_008.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_008.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p>Commenting out due to issue #290
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_011.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_011.png" alt="post processing exhaust manifold" class = "sphx-glr-single-img"/><p>Commenting out due to issue #290
 Start the Plot Object for the session</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plots_session_1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 </pre></div>
@@ -476,14 +512,14 @@ Start the Plot Object for the session</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xy_plot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;window-7&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_009.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_009.png" alt="XY Plot" class = "sphx-glr-single-img"/><p>Plot residual</p>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_012.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_012.png" alt="XY Plot" class = "sphx-glr-single-img"/><p>Plot residual</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matplotlib_plots1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 <span class="n">residual</span> <span class="o">=</span> <span class="n">matplotlib_plots1</span><span class="o">.</span><span class="n">Monitors</span><span class="p">[</span><span class="s2">&quot;residual&quot;</span><span class="p">]</span>
 <span class="n">residual</span><span class="o">.</span><span class="n">monitor_set_name</span> <span class="o">=</span> <span class="s2">&quot;residual&quot;</span>
 <span class="n">residual</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;window-8&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_010.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_010.png" alt="residual" class = "sphx-glr-single-img"/><p>Solve and Plot Solution Minitors.</p>
+<img src="../../_images/sphx_glr_post_processing_exhaust_manifold_013.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_013.png" alt="residual" class = "sphx-glr-single-img"/><p>Solve and Plot Solution Minitors.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">session</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">solve</span><span class="o">.</span><span class="n">initialize</span><span class="o">.</span><span class="n">hyb_initialization</span><span class="p">()</span>
 <span class="n">session</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">solve</span><span class="o">.</span><span class="n">set</span><span class="o">.</span><span class="n">number_of_iterations</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">session</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">solve</span><span class="o">.</span><span class="n">iterate</span><span class="p">()</span>
@@ -499,8 +535,8 @@ Start the Plot Object for the session</p>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_post_processing_exhaust_manifold_011.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_011.png" alt="mass-bal-rplot" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_post_processing_exhaust_manifold_012.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_012.png" alt="point-vel-rplot" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_post_processing_exhaust_manifold_014.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_014.png" alt="mass-bal-rplot" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_post_processing_exhaust_manifold_015.png" srcset="../../_images/sphx_glr_post_processing_exhaust_manifold_015.png" alt="point-vel-rplot" class = "sphx-glr-multi-img"/></li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Initialize using the hybrid initialization method.
@@ -526,28 +562,28 @@ Checking case topology...
 Hybrid initialization is done.
 
   iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
-     1  1.0000e+00  6.6239e-03  8.9851e-03  1.0406e-03  1.3174e-05  8.3905e-02  1.9687e+00  0:02:03   49
-     2  9.0751e-01  4.1629e-03  5.6963e-03  6.8657e-04  2.4461e-05  6.9978e-02  1.1888e-01  0:01:54   48
+     1  1.0000e+00  6.6239e-03  8.9851e-03  1.0406e-03  1.3174e-05  8.3905e-02  1.9687e+00  0:02:04   49
+     2  9.0751e-01  4.1629e-03  5.6963e-03  6.8657e-04  2.4461e-05  6.9978e-02  1.1888e-01  0:01:55   48
      3  1.0000e+00  2.2771e-03  2.9607e-03  4.7681e-04  2.0995e-05  2.8521e-02  8.0694e-02  0:01:46   47
      4  9.1168e-01  1.3393e-03  1.5431e-03  3.3788e-04  1.8445e-05  1.8028e-02  4.7333e-02  0:01:39   46
-     5  7.6387e-01  8.8641e-04  8.6582e-04  2.5617e-04  1.5828e-05  1.5080e-02  2.7473e-02  0:01:33   45
-     6  6.1513e-01  6.7494e-04  5.4558e-04  2.1319e-04  1.3654e-05  1.3068e-02  2.0080e-02  0:01:29   44
+     5  7.6387e-01  8.8641e-04  8.6582e-04  2.5617e-04  1.5828e-05  1.5080e-02  2.7473e-02  0:01:34   45
+     6  6.1513e-01  6.7494e-04  5.4558e-04  2.1319e-04  1.3654e-05  1.3068e-02  2.0080e-02  0:01:30   44
      7  5.0530e-01  5.7986e-04  4.1173e-04  1.9513e-04  1.1691e-05  1.1044e-02  1.5443e-02  0:01:26   43
-     8  4.1931e-01  5.2154e-04  3.4894e-04  1.8912e-04  9.9009e-06  9.3446e-03  1.1754e-02  0:01:22   42
-     9  3.5196e-01  4.6896e-04  3.0675e-04  1.8481e-04  8.4515e-06  7.9274e-03  9.6256e-03  0:01:18   41
+     8  4.1931e-01  5.2154e-04  3.4894e-04  1.8912e-04  9.9009e-06  9.3446e-03  1.1754e-02  0:01:21   42
+     9  3.5196e-01  4.6896e-04  3.0675e-04  1.8481e-04  8.4515e-06  7.9274e-03  9.6256e-03  0:01:17   41
     10  2.9684e-01  4.2152e-04  2.7719e-04  1.8074e-04  7.2802e-06  6.7306e-03  8.2772e-03  0:01:14   40
     11  2.5520e-01  3.7789e-04  2.5127e-04  1.7487e-04  6.2832e-06  5.7418e-03  7.3080e-03  0:01:11   39
 
   iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
     12  2.2255e-01  3.3843e-04  2.2905e-04  1.6636e-04  5.4275e-06  4.9333e-03  6.4872e-03  0:01:08   38
     13  1.9390e-01  3.0279e-04  2.0803e-04  1.5529e-04  4.7055e-06  4.2292e-03  5.7680e-03  0:01:06   37
-    14  1.6816e-01  2.7079e-04  1.8841e-04  1.4221e-04  4.0913e-06  3.6356e-03  5.0840e-03  0:01:02   36
+    14  1.6816e-01  2.7079e-04  1.8841e-04  1.4221e-04  4.0913e-06  3.6356e-03  5.0840e-03  0:01:03   36
     15  1.4571e-01  2.4159e-04  1.6970e-04  1.2780e-04  3.5936e-06  3.1134e-03  4.3848e-03  0:01:01   35
     16  1.2829e-01  2.1463e-04  1.5094e-04  1.1272e-04  3.1689e-06  2.6538e-03  3.7306e-03  0:00:59   34
     17  1.1531e-01  1.8992e-04  1.3234e-04  9.8205e-05  2.8222e-06  2.2685e-03  3.1918e-03  0:00:57   33
-    18  1.0474e-01  1.6884e-04  1.1461e-04  8.5406e-05  2.5827e-06  1.9798e-03  2.7959e-03  0:00:55   32
-    19  9.7912e-02  1.5346e-04  9.9032e-05  7.5723e-05  2.4584e-06  1.7744e-03  2.5179e-03  0:00:53   31
-    20  9.2387e-02  1.4439e-04  8.6421e-05  7.0036e-05  2.4442e-06  1.6403e-03  2.3473e-03  0:00:51   30
+    18  1.0474e-01  1.6884e-04  1.1461e-04  8.5406e-05  2.5827e-06  1.9798e-03  2.7959e-03  0:00:56   32
+    19  9.7912e-02  1.5346e-04  9.9032e-05  7.5723e-05  2.4584e-06  1.7744e-03  2.5179e-03  0:00:54   31
+    20  9.2387e-02  1.4439e-04  8.6421e-05  7.0036e-05  2.4442e-06  1.6403e-03  2.3473e-03  0:00:52   30
     21  8.8851e-02  1.4068e-04  7.7616e-05  6.8105e-05  2.5087e-06  1.5797e-03  2.2802e-03  0:00:50   29
     22  8.6319e-02  1.4029e-04  7.2672e-05  6.8955e-05  2.5562e-06  1.5607e-03  2.2860e-03  0:00:48   28
 
@@ -560,16 +596,16 @@ Hybrid initialization is done.
     28  6.0960e-02  1.0829e-04  6.4421e-05  6.6565e-05  1.5061e-06  1.1076e-03  1.7399e-03  0:00:38   22
     29  5.4362e-02  9.7412e-05  5.9608e-05  6.1410e-05  1.2761e-06  9.8280e-04  1.5456e-03  0:00:36   21
     30  4.7964e-02  8.6722e-05  5.4254e-05  5.5796e-05  1.0720e-06  8.6466e-04  1.3558e-03  0:00:34   20
-    31  4.1942e-02  7.6652e-05  4.8683e-05  5.0131e-05  8.9664e-07  7.5806e-04  1.1783e-03  0:00:32   19
-    32  3.6496e-02  6.7381e-05  4.3213e-05  4.4671e-05  7.4868e-07  6.6340e-04  1.0143e-03  0:00:30   18
-    33  3.1630e-02  5.8965e-05  3.8001e-05  3.9603e-05  6.2989e-07  5.8019e-04  8.6847e-04  0:00:29   17
+    31  4.1942e-02  7.6652e-05  4.8683e-05  5.0131e-05  8.9664e-07  7.5806e-04  1.1783e-03  0:00:34   19
+    32  3.6496e-02  6.7381e-05  4.3213e-05  4.4671e-05  7.4868e-07  6.6340e-04  1.0143e-03  0:00:31   18
+    33  3.1630e-02  5.8965e-05  3.8001e-05  3.9603e-05  6.2989e-07  5.8019e-04  8.6847e-04  0:00:30   17
 
   iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
-    34  2.7296e-02  5.1410e-05  3.3150e-05  3.4937e-05  5.3090e-07  5.0722e-04  7.3939e-04  0:00:27   16
-    35  2.3517e-02  4.4731e-05  2.8768e-05  3.0686e-05  4.4498e-07  4.4293e-04  6.2777e-04  0:00:25   15
+    34  2.7296e-02  5.1410e-05  3.3150e-05  3.4937e-05  5.3090e-07  5.0722e-04  7.3939e-04  0:00:28   16
+    35  2.3517e-02  4.4731e-05  2.8768e-05  3.0686e-05  4.4498e-07  4.4293e-04  6.2777e-04  0:00:26   15
     36  2.0199e-02  3.8849e-05  2.4860e-05  2.6819e-05  3.7414e-07  3.8621e-04  5.3219e-04  0:00:24   14
     37  1.7370e-02  3.3655e-05  2.1436e-05  2.3358e-05  3.1530e-07  3.3564e-04  4.5196e-04  0:00:22   13
-    38  1.4886e-02  2.9102e-05  1.8449e-05  2.0265e-05  2.6473e-07  2.9129e-04  3.8423e-04  0:00:20   12
+    38  1.4886e-02  2.9102e-05  1.8449e-05  2.0265e-05  2.6473e-07  2.9129e-04  3.8423e-04  0:00:21   12
     39  1.2736e-02  2.5127e-05  1.5855e-05  1.7530e-05  2.2203e-07  2.5254e-04  3.2781e-04  0:00:19   11
     40  1.0936e-02  2.1658e-05  1.3621e-05  1.5114e-05  1.8657e-07  2.1886e-04  2.8041e-04  0:00:17   10
     41  9.4098e-03  1.8646e-05  1.1699e-05  1.2994e-05  1.5689e-07  1.8929e-04  2.4002e-04  0:00:15    9
@@ -590,7 +626,7 @@ Hybrid initialization is done.
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">session</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  23.494 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  26.233 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-00-postprocessing-post-processing-exhaust-manifold-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9a025ab8fd5ec8428ac9b49a6901877e/post_processing_exhaust_manifold.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">post_processing_exhaust_manifold.py</span></code></a></p>
