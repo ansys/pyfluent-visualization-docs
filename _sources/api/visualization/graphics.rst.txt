@@ -1,0 +1,26 @@
+.. _ref_graphics:
+
+Graphics
+======== 
+ 
+.. autopostdoc:: ansys.fluent.visualization.pyvista.pyvista_objects.Graphics   
+
+Following is usage::
+
+        from ansys.fluent.visualization.pyvista import  Graphics
+        
+        graphics_session1 = Graphics(session)
+        mesh1 = graphics_session1.Meshes["mesh-1"]
+        contour1 = graphics_session1.Contours["contour-1"]
+        contour2 = graphics_session1.Contours["contour-2"]
+        surface1 = graphics_session1.Surfaces["surface-1"]
+        del graphics_session1.Contours["contour-1"] 
+           
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+      
+   mesh
+   surface
+   contour  
+   vector   

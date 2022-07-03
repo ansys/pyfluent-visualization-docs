@@ -1,0 +1,35 @@
+.. _ref_plots:
+
+Plots
+=====
+.. autoclass:: ansys.fluent.visualization.matplotlib.matplot_objects.Plots
+
+
+Following is usage::        
+
+
+        from ansys.fluent.visualization.matplotlib import Plots
+    
+        plots_session1 = Plots(session)
+        plots = plots_session1.XYPlots["plot-1"]
+        
+        #To plot data on surfaces created in pyVista
+        from ansys.fluent.visualization.pyvista import  Graphics        
+        pyvista_surface_provider = Graphics(session).Surfaces
+        plots_session1 = Plots(session, pyvista_surface_provider) 
+        
+        #To plot monitors
+        monitor1=plots_session1.Monitors["monitor-1"]        
+        #Get available monitors and set any monitor name to monitor_set_name.
+        session.monitors_manager.get_monitor_set_names()                
+        monitor1.monitor_set_name = "residual"
+        monitor1.plot("monitor1-window")        
+        
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+      
+   xyplot 
+   monitorplot    
+ 
+
