@@ -341,7 +341,25 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="ansys.fluent.visualization.pyvista.pyvista_objects.Graphics">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.fluent.visualization.pyvista.pyvista_objects.</span></span><span class="sig-name descname"><span class="pre">Graphics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_surfaces_provider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.pyvista.pyvista_objects.Graphics" title="Permalink to this definition">#</a></dt>
-<dd><p>Graphics objects provider.</p>
+<dd><p>PyVista Graphics objects manager.</p>
+<p>It provides access to graphics object containers for a given session,
+from which grpahics objects can be created.
+It takes session object as argument. Additionally local surface provider
+can also be passed to access surfaces created in other modules.</p>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>Meshes</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Container for mesh objects.</p>
+</dd>
+<dt><strong>Surfaces</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Container for surface objects.</p>
+</dd>
+<dt><strong>Contours</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Container for contour objects.</p>
+</dd>
+<dt><strong>Vectors</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Container for vector objects.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="longtable table autosummary">
 <colgroup>
