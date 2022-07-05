@@ -1,0 +1,6 @@
+add\_outline\_mesh
+==================
+
+.. currentmodule:: ansys.fluent.visualization.pyvista.pyvista_objects
+
+.. automethod:: Graphics.add_outline_mesh

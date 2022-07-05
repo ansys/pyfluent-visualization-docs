@@ -1,9 +1,9 @@
-.. _ref_visualization:
+.. _ref_postprocessing:
 
-Visualization
-=============
+Postprocessing
+==============
 
-Post processing of Fluent results can be done with either Fluent in-built post
+Post processing Fluent results can be done with either Fluent in-built post
 processing capabilities or with the PyVista/MatplotLib integration.
 
 Fluent
@@ -116,4 +116,4 @@ environment and data is plotted in MatplotLib.
    :maxdepth: 2
    :hidden:
    
-   post_objects
+   pyvista_objects
