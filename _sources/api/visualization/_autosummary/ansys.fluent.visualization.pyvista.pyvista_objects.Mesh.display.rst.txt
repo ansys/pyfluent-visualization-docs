@@ -1,6 +1,0 @@
-display
-=======
-
-.. currentmodule:: ansys.fluent.visualization.pyvista.pyvista_objects
-
-.. automethod:: Mesh.display
