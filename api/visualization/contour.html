@@ -312,6 +312,15 @@
 <dt class="sig sig-object py" id="ansys.fluent.visualization.pyvista.pyvista_objects.Contour">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.fluent.visualization.pyvista.pyvista_objects.</span></span><span class="sig-name descname"><span class="pre">Contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_helper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.pyvista.pyvista_objects.Contour" title="Permalink to this definition">#</a></dt>
 <dd><p>Contour graphics.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.fluent.visualization.pyvista</span> <span class="kn">import</span>  <span class="n">Graphics</span>
+
+<span class="n">graphics_session</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="n">contour1</span> <span class="o">=</span> <span class="n">graphics_session</span><span class="o">.</span><span class="n">Contours</span><span class="p">[</span><span class="s2">&quot;contour-1&quot;</span><span class="p">]</span>
+<span class="n">contour1</span><span class="o">.</span><span class="n">field</span> <span class="o">=</span> <span class="s2">&quot;velocity-magnitude&quot;</span>
+<span class="n">contour1</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;wall&#39;</span><span class="p">]</span>
+<span class="n">contour1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p class="rubric">Attributes</p>
 <table class="table">
 <colgroup>

@@ -328,21 +328,24 @@ can also be passed to access surfaces created in other modules e.g. pyVista.</p>
 </dd></dl>
 
 <p>In the following example, a Plots object is instantiated with a Fluent session as its context. The Plots object is used to create and display a monitor plot.</p>
-<blockquote>
-<div><p>from ansys.fluent.visualization.matplotlib import Plots</p>
-<p>plots_session1 = Plots(session)
-plots = plots_session1.XYPlots[“plot-1”]</p>
-<p>#To plot data on surfaces created in pyVista
-from ansys.fluent.visualization.pyvista import  Graphics
-pyvista_surface_provider = Graphics(session).Surfaces
-plots_session1 = Plots(session, pyvista_surface_provider)</p>
-<p>#To plot monitors
-monitor1=plots_session1.Monitors[“monitor-1”]
-#Get available monitors and set any monitor name to monitor_set_name.
-session.monitors_manager.get_monitor_set_names()
-monitor1.monitor_set_name = “residual”
-monitor1.plot(“monitor1-window”)</p>
-</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.fluent.visualization.matplotlib</span> <span class="kn">import</span> <span class="n">Plots</span>
+
+<span class="n">plots_session1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="n">plots</span> <span class="o">=</span> <span class="n">plots_session1</span><span class="o">.</span><span class="n">XYPlots</span><span class="p">[</span><span class="s2">&quot;plot-1&quot;</span><span class="p">]</span>
+
+<span class="c1">#To plot data on surfaces created in pyVista</span>
+<span class="kn">from</span> <span class="nn">ansys.fluent.visualization.pyvista</span> <span class="kn">import</span>  <span class="n">Graphics</span>
+<span class="n">pyvista_surface_provider</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">(</span><span class="n">session</span><span class="p">)</span><span class="o">.</span><span class="n">Surfaces</span>
+<span class="n">plots_session1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">pyvista_surface_provider</span><span class="p">)</span>
+
+<span class="c1">#To plot monitors</span>
+<span class="n">monitor1</span><span class="o">=</span><span class="n">plots_session1</span><span class="o">.</span><span class="n">Monitors</span><span class="p">[</span><span class="s2">&quot;monitor-1&quot;</span><span class="p">]</span>
+<span class="c1">#Get available monitors and set any monitor name to monitor_set_name.</span>
+<span class="n">session</span><span class="o">.</span><span class="n">monitors_manager</span><span class="o">.</span><span class="n">get_monitor_set_names</span><span class="p">()</span>
+<span class="n">monitor1</span><span class="o">.</span><span class="n">monitor_set_name</span> <span class="o">=</span> <span class="s2">&quot;residual&quot;</span>
+<span class="n">monitor1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;monitor1-window&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>

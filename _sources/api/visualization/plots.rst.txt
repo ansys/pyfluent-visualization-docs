@@ -7,6 +7,7 @@ Plots
 
 In the following example, a Plots object is instantiated with a Fluent session as its context. The Plots object is used to create and display a monitor plot. 
 
+.. code-block:: python
 
         from ansys.fluent.visualization.matplotlib import Plots
     

@@ -349,15 +349,19 @@ can also be passed to access surfaces created in other modules.</p>
 </dd></dl>
 
 <p>In the following example, a Graphics object is instantiated with a Fluent session as its context. The Graphics object is used to create mesh, contour and surface objects.</p>
-<blockquote>
-<div><p>from ansys.fluent.visualization.pyvista import  Graphics</p>
-<p>graphics_session1 = Graphics(session)
-mesh1 = graphics_session1.Meshes[“mesh-1”]
-contour1 = graphics_session1.Contours[“contour-1”]
-contour2 = graphics_session1.Contours[“contour-2”]
-surface1 = graphics_session1.Surfaces[“surface-1”]
-del graphics_session1.Contours[“contour-1”]</p>
-</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.fluent.visualization.pyvista</span> <span class="kn">import</span>  <span class="n">Graphics</span>
+<span class="n">graphics_session</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+
+<span class="c1">#Create object</span>
+<span class="n">mesh1</span> <span class="o">=</span> <span class="n">graphics_session</span><span class="o">.</span><span class="n">Meshes</span><span class="p">[</span><span class="s2">&quot;mesh-1&quot;</span><span class="p">]</span>
+<span class="n">contour1</span> <span class="o">=</span> <span class="n">graphics_session</span><span class="o">.</span><span class="n">Contours</span><span class="p">[</span><span class="s2">&quot;contour-1&quot;</span><span class="p">]</span>
+<span class="n">vector1</span> <span class="o">=</span> <span class="n">graphics_session</span><span class="o">.</span><span class="n">Vectors</span><span class="p">[</span><span class="s2">&quot;vector-1&quot;</span><span class="p">]</span>
+<span class="n">surface1</span> <span class="o">=</span> <span class="n">graphics_session</span><span class="o">.</span><span class="n">Surfaces</span><span class="p">[</span><span class="s2">&quot;surface-1&quot;</span><span class="p">]</span>
+
+<span class="c1">#Delete object</span>
+<span class="k">del</span> <span class="n">graphics_session</span><span class="o">.</span><span class="n">Contours</span><span class="p">[</span><span class="s2">&quot;contour-1&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>
