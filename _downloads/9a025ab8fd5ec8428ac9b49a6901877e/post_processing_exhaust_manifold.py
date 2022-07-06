@@ -39,9 +39,7 @@ import_data = examples.download_file(
     filename="exhaust_system.dat.h5", directory="pyfluent/exhaust_system"
 )
 
-session = pyfluent.launch_fluent(
-    precision="double", processor_count=2, start_transcript=False
-)
+session = pyfluent.launch_fluent(precision="double", processor_count=2)
 
 session.solver.tui.file.read_case(case_file_name=import_case)
 session.solver.tui.file.read_data(case_file_name=import_data)
@@ -145,7 +143,7 @@ surf_vel_contour.display("window-5")
 temperature_contour = graphics.Contours["contour-temperature"]
 temperature_contour.field = "temperature"
 temperature_contour.surfaces_list = ["mid-plane-x", "outlet-plane"]
-temperature_contour.display("window-6")
+temperature_contour.display("window-4")
 
 ###############################################################################
 # Contour plot of temperature on the manifold
@@ -160,17 +158,19 @@ temperature_contour_manifold.surfaces_list = [
     "solid_up:1",
     "solid_up:1:830",
 ]
-temperature_contour_manifold.display("window-7")
+temperature_contour_manifold.display("window-5")
 
 ###############################################################################
-# Vector on a predefined surface
+# Vector on the mid-plane
+# Currently using outlet-plane since mid-plane is affected by Issue # 276
 
 velocity_vector = graphics.Vectors["velocity-vector"]
 velocity_vector.surfaces_list = ["solid_up:1:830"]
 velocity_vector.scale = 2
-velocity_vector.display("window-8")
+velocity_vector.display("window-6")
 
 ###############################################################################
+# Commenting out due to issue #290
 # Start the Plot Object for the session
 plots_session_1 = Plots(session)
 
@@ -185,7 +185,7 @@ xy_plot.y_axis_function = "temperature"
 
 ###############################################################################
 # Plot the created XY-Plot
-xy_plot.plot("window-9")
+xy_plot.plot("window-7")
 
 ###############################################################################
 # Plot residual
@@ -193,10 +193,10 @@ xy_plot.plot("window-9")
 matplotlib_plots1 = Plots(session)
 residual = matplotlib_plots1.Monitors["residual"]
 residual.monitor_set_name = "residual"
-residual.plot("window-10")
+residual.plot("window-8")
 
 ###############################################################################
-# Solve and Plot Solution Monitors.
+# Solve and Plot Solution Minitors.
 
 session.solver.tui.solve.initialize.hyb_initialization()
 session.solver.tui.solve.set.number_of_iterations(50)
@@ -204,12 +204,12 @@ session.solver.tui.solve.iterate()
 matplotlib_plots1 = Plots(session)
 mass_bal_rplot = matplotlib_plots1.Monitors["mass-bal-rplot"]
 mass_bal_rplot.monitor_set_name = "mass-bal-rplot"
-mass_bal_rplot.plot("window-11")
+mass_bal_rplot.plot("window-9")
 
 matplotlib_plots1 = Plots(session)
 point_vel_rplot = matplotlib_plots1.Monitors["point-vel-rplot"]
 point_vel_rplot.monitor_set_name = "point-vel-rplot"
-point_vel_rplot.plot("window-12")
+point_vel_rplot.plot("window-10")
 
 ###############################################################################
 # Close Fluent
