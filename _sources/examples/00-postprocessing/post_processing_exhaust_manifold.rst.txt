@@ -72,7 +72,7 @@ This example demonstrates postprocessing using pyvista
 First, download the case and data file and start Fluent as a service with
 Meshing mode, double precision, number of processors: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-47
+.. GENERATED FROM PYTHON SOURCE LINES 33-49
 
 .. code-block:: default
 
@@ -85,7 +85,9 @@ Meshing mode, double precision, number of processors: 2
         filename="exhaust_system.dat.h5", directory="pyfluent/exhaust_system"
     )
 
-    session = pyfluent.launch_fluent(precision="double", processor_count=2)
+    session = pyfluent.launch_fluent(
+        precision="double", processor_count=2, start_transcript=False
+    )
 
     session.solver.tui.file.read_case(case_file_name=import_case)
     session.solver.tui.file.read_data(case_file_name=import_data)
@@ -94,86 +96,14 @@ Meshing mode, double precision, number of processors: 2
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Fast-loading "/ansys_inc/v222/fluent/fluent22.2.0/addons/afd/lib/hdfio.bin"
-    Done.
-
-    Reading from 5be8490d6e1b:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.cas.h5" in NODE0 mode ...
-      Reading mesh ...
-          288590 cells,     2 cell zones ...
-             201658 polyhedra cells,  zone id: 815
-              86932 polyhedra cells,  zone id: 818
-         1795387 faces,    13 face zones ...
-             454038 polygonal interior faces,  zone id: 817
-            1258889 polygonal interior faces,  zone id: 814
-                275 polygonal pressure-outlet faces,  zone id: 559
-                261 polygonal velocity-inlet faces,  zone id: 463
-                265 polygonal velocity-inlet faces,  zone id: 367
-                262 polygonal velocity-inlet faces,  zone id: 272
-              51846 polygonal wall faces,  zone id: 226
-              13399 polygonal wall faces,  zone id: 830
-              13399 polygonal wall faces,  zone id: 2
-                724 polygonal wall faces,  zone id: 181
-                676 polygonal wall faces,  zone id: 180
-                678 polygonal wall faces,  zone id: 179
-                675 polygonal wall faces,  zone id: 178
-         1408040 nodes,     1 node zone  ...
-      Done.
-
-
-    Building...
-         mesh
-            distributing mesh
-                    pairs..,
-                    parts..,
-                    faces..,
-                    nodes..,
-                    shadow nodes..,
-                    cells..,
-            bandwidth reduction using Reverse Cuthill-McKee: 80788/4398 = 18.3693
-         materials,
-         interface,
-         domains,
-            mixture
-         zones,
-            solid_up:1:830-shadow
-            interior--fluid1
-            interior--solid_up
-            outlet
-            inlet2
-            inlet1
-            inlet
-            solid_up:1
-            solid_up:1:830
-            out1
-            in3
-            in2
-            in1
-            fluid1
-            solid_up
-         parallel,
-    Done.
-
-    Reading from 5be8490d6e1b:"/home/ansys/.local/share/ansys_fluent_core/examples/exhaust_system.dat.h5" in NODE0 mode ...
-
-
-      Reading results.
-    Parallel variables...
-    Done.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 48-49
+.. GENERATED FROM PYTHON SOURCE LINES 50-51
 
 Get the graphics object for mesh display
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-52
+.. GENERATED FROM PYTHON SOURCE LINES 51-54
 
 .. code-block:: default
 
@@ -187,11 +117,11 @@ Get the graphics object for mesh display
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-54
+.. GENERATED FROM PYTHON SOURCE LINES 55-56
 
 Create a graphics object for mesh display
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-57
+.. GENERATED FROM PYTHON SOURCE LINES 56-59
 
 .. code-block:: default
 
@@ -205,11 +135,11 @@ Create a graphics object for mesh display
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-59
+.. GENERATED FROM PYTHON SOURCE LINES 60-61
 
 Show edges
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-62
+.. GENERATED FROM PYTHON SOURCE LINES 61-64
 
 .. code-block:: default
 
@@ -223,11 +153,11 @@ Show edges
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-64
+.. GENERATED FROM PYTHON SOURCE LINES 65-66
 
 Get the surfaces list
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-76
+.. GENERATED FROM PYTHON SOURCE LINES 66-78
 
 .. code-block:: default
 
@@ -255,11 +185,11 @@ Get the surfaces list
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-78
+.. GENERATED FROM PYTHON SOURCE LINES 79-80
 
 Disable edges and display again
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-82
+.. GENERATED FROM PYTHON SOURCE LINES 80-84
 
 .. code-block:: default
 
@@ -279,11 +209,11 @@ Disable edges and display again
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-84
+.. GENERATED FROM PYTHON SOURCE LINES 85-86
 
 Create plane-surface XY plane
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-91
+.. GENERATED FROM PYTHON SOURCE LINES 86-93
 
 .. code-block:: default
 
@@ -303,22 +233,14 @@ Create plane-surface XY plane
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Invalid surface.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 92-93
+.. GENERATED FROM PYTHON SOURCE LINES 94-95
 
 Create plane-surface YZ plane
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-100
+.. GENERATED FROM PYTHON SOURCE LINES 95-102
 
 .. code-block:: default
 
@@ -338,22 +260,14 @@ Create plane-surface YZ plane
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Invalid surface.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 101-102
+.. GENERATED FROM PYTHON SOURCE LINES 103-104
 
 Create plane-surface ZX plane
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-109
+.. GENERATED FROM PYTHON SOURCE LINES 104-111
 
 .. code-block:: default
 
@@ -373,22 +287,14 @@ Create plane-surface ZX plane
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Invalid surface.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 110-111
+.. GENERATED FROM PYTHON SOURCE LINES 112-113
 
 Create iso-surface on the outlet plane
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-119
+.. GENERATED FROM PYTHON SOURCE LINES 113-121
 
 .. code-block:: default
 
@@ -409,24 +315,14 @@ Create iso-surface on the outlet plane
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    range [-125.0188, 2.4751942e-09]
-    range [-125.0188, 2.4751942e-09]
-    Invalid surface.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 120-121
+.. GENERATED FROM PYTHON SOURCE LINES 122-123
 
 Create iso-surface on the mid-plane
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-129
+.. GENERATED FROM PYTHON SOURCE LINES 123-131
 
 .. code-block:: default
 
@@ -447,24 +343,14 @@ Create iso-surface on the mid-plane
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    range [-362.71505, 13.458935]
-    range [-362.71505, 13.458935]
-    Invalid surface.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 130-131
+.. GENERATED FROM PYTHON SOURCE LINES 132-133
 
 Create iso-surface using the velocity magnitude
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-140
+.. GENERATED FROM PYTHON SOURCE LINES 133-142
 
 .. code-block:: default
 
@@ -486,24 +372,14 @@ Create iso-surface using the velocity magnitude
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    range [0, 39.720055]
-    range [0, 39.720055]
-    Invalid surface.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 141-142
+.. GENERATED FROM PYTHON SOURCE LINES 143-144
 
 Temperature contour on the mid-plane and the outlet
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-148
+.. GENERATED FROM PYTHON SOURCE LINES 144-150
 
 .. code-block:: default
 
@@ -511,7 +387,7 @@ Temperature contour on the mid-plane and the outlet
     temperature_contour = graphics.Contours["contour-temperature"]
     temperature_contour.field = "temperature"
     temperature_contour.surfaces_list = ["mid-plane-x", "outlet-plane"]
-    temperature_contour.display("window-4")
+    temperature_contour.display("window-6")
 
 
 
@@ -522,23 +398,14 @@ Temperature contour on the mid-plane and the outlet
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    range [-362.71505, 13.458935]
-    range [-125.0188, 2.4751942e-09]
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 149-150
+.. GENERATED FROM PYTHON SOURCE LINES 151-152
 
 Contour plot of temperature on the manifold
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-163
+.. GENERATED FROM PYTHON SOURCE LINES 152-165
 
 .. code-block:: default
 
@@ -553,7 +420,7 @@ Contour plot of temperature on the manifold
         "solid_up:1",
         "solid_up:1:830",
     ]
-    temperature_contour_manifold.display("window-5")
+    temperature_contour_manifold.display("window-7")
 
 
 
@@ -567,12 +434,11 @@ Contour plot of temperature on the manifold
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-166
+.. GENERATED FROM PYTHON SOURCE LINES 166-167
 
-Vector on the mid-plane
-Currently using outlet-plane since mid-plane is affected by Issue # 276
+Vector on a predefined surface
 
-.. GENERATED FROM PYTHON SOURCE LINES 166-172
+.. GENERATED FROM PYTHON SOURCE LINES 167-173
 
 .. code-block:: default
 
@@ -580,7 +446,7 @@ Currently using outlet-plane since mid-plane is affected by Issue # 276
     velocity_vector = graphics.Vectors["velocity-vector"]
     velocity_vector.surfaces_list = ["solid_up:1:830"]
     velocity_vector.scale = 2
-    velocity_vector.display("window-6")
+    velocity_vector.display("window-8")
 
 
 
@@ -594,9 +460,8 @@ Currently using outlet-plane since mid-plane is affected by Issue # 276
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 173-175
+.. GENERATED FROM PYTHON SOURCE LINES 174-175
 
-Commenting out due to issue #290
 Start the Plot Object for the session
 
 .. GENERATED FROM PYTHON SOURCE LINES 175-177
@@ -655,7 +520,7 @@ Plot the created XY-Plot
 
 .. code-block:: default
 
-    xy_plot.plot("window-7")
+    xy_plot.plot("window-9")
 
 
 
@@ -681,7 +546,7 @@ Plot residual
     matplotlib_plots1 = Plots(session)
     residual = matplotlib_plots1.Monitors["residual"]
     residual.monitor_set_name = "residual"
-    residual.plot("window-8")
+    residual.plot("window-10")
 
 
 
@@ -697,7 +562,7 @@ Plot residual
 
 .. GENERATED FROM PYTHON SOURCE LINES 199-200
 
-Solve and Plot Solution Minitors.
+Solve and Plot Solution Monitors.
 
 .. GENERATED FROM PYTHON SOURCE LINES 200-214
 
@@ -710,12 +575,12 @@ Solve and Plot Solution Minitors.
     matplotlib_plots1 = Plots(session)
     mass_bal_rplot = matplotlib_plots1.Monitors["mass-bal-rplot"]
     mass_bal_rplot.monitor_set_name = "mass-bal-rplot"
-    mass_bal_rplot.plot("window-9")
+    mass_bal_rplot.plot("window-11")
 
     matplotlib_plots1 = Plots(session)
     point_vel_rplot = matplotlib_plots1.Monitors["point-vel-rplot"]
     point_vel_rplot.monitor_set_name = "point-vel-rplot"
-    point_vel_rplot.plot("window-10")
+    point_vel_rplot.plot("window-12")
 
 
 
@@ -737,95 +602,6 @@ Solve and Plot Solution Minitors.
          :srcset: /examples/00-postprocessing/images/sphx_glr_post_processing_exhaust_manifold_015.png
          :class: sphx-glr-multi-img
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    Initialize using the hybrid initialization method.
-
-    Checking case topology... 
-    -This case has both inlets & outlets 
-    -Pressure information is not available at the boundaries.
-     Case will be initialized with constant pressure
-
-            iter            scalar-0
-
-            1               1.000000e+00
-            2               2.314023e-04
-            3               1.115820e-05
-            4               8.811880e-06
-            5               1.234943e-06
-            6               1.710801e-06
-            7               1.705969e-07
-            8               2.304813e-07
-            9               2.298045e-08
-            10              3.116448e-08
-
-    Hybrid initialization is done.
-
-      iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
-         1  1.0000e+00  6.6239e-03  8.9851e-03  1.0406e-03  1.3174e-05  8.3905e-02  1.9687e+00  0:02:05   49
-         2  9.0751e-01  4.1629e-03  5.6963e-03  6.8657e-04  2.4461e-05  6.9978e-02  1.1888e-01  0:01:55   48
-         3  1.0000e+00  2.2771e-03  2.9607e-03  4.7681e-04  2.0995e-05  2.8521e-02  8.0694e-02  0:01:46   47
-         4  9.1168e-01  1.3393e-03  1.5431e-03  3.3788e-04  1.8445e-05  1.8028e-02  4.7333e-02  0:01:38   46
-         5  7.6387e-01  8.8641e-04  8.6582e-04  2.5617e-04  1.5828e-05  1.5080e-02  2.7473e-02  0:01:32   45
-         6  6.1513e-01  6.7494e-04  5.4558e-04  2.1319e-04  1.3654e-05  1.3068e-02  2.0080e-02  0:01:28   44
-         7  5.0530e-01  5.7986e-04  4.1173e-04  1.9513e-04  1.1691e-05  1.1044e-02  1.5443e-02  0:01:24   43
-         8  4.1931e-01  5.2154e-04  3.4894e-04  1.8912e-04  9.9009e-06  9.3446e-03  1.1754e-02  0:01:20   42
-         9  3.5196e-01  4.6896e-04  3.0675e-04  1.8481e-04  8.4515e-06  7.9274e-03  9.6256e-03  0:01:16   41
-        10  2.9684e-01  4.2152e-04  2.7719e-04  1.8074e-04  7.2802e-06  6.7306e-03  8.2772e-03  0:01:13   40
-        11  2.5520e-01  3.7789e-04  2.5127e-04  1.7487e-04  6.2832e-06  5.7418e-03  7.3080e-03  0:01:10   39
-
-      iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
-        12  2.2255e-01  3.3843e-04  2.2905e-04  1.6636e-04  5.4275e-06  4.9333e-03  6.4872e-03  0:01:08   38
-        13  1.9390e-01  3.0279e-04  2.0803e-04  1.5529e-04  4.7055e-06  4.2292e-03  5.7680e-03  0:01:05   37
-        14  1.6816e-01  2.7079e-04  1.8841e-04  1.4221e-04  4.0913e-06  3.6356e-03  5.0840e-03  0:01:02   36
-        15  1.4571e-01  2.4159e-04  1.6970e-04  1.2780e-04  3.5936e-06  3.1134e-03  4.3848e-03  0:01:00   35
-        16  1.2829e-01  2.1463e-04  1.5094e-04  1.1272e-04  3.1689e-06  2.6538e-03  3.7306e-03  0:00:58   34
-        17  1.1531e-01  1.8992e-04  1.3234e-04  9.8205e-05  2.8222e-06  2.2685e-03  3.1918e-03  0:00:56   33
-        18  1.0474e-01  1.6884e-04  1.1461e-04  8.5406e-05  2.5827e-06  1.9798e-03  2.7959e-03  0:00:55   32
-        19  9.7912e-02  1.5346e-04  9.9032e-05  7.5723e-05  2.4584e-06  1.7744e-03  2.5179e-03  0:00:53   31
-        20  9.2387e-02  1.4439e-04  8.6421e-05  7.0036e-05  2.4442e-06  1.6403e-03  2.3473e-03  0:00:51   30
-        21  8.8851e-02  1.4068e-04  7.7616e-05  6.8105e-05  2.5087e-06  1.5797e-03  2.2802e-03  0:00:49   29
-        22  8.6319e-02  1.4029e-04  7.2672e-05  6.8955e-05  2.5562e-06  1.5607e-03  2.2860e-03  0:00:47   28
-
-      iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
-        23  8.4196e-02  1.4018e-04  7.1019e-05  7.1374e-05  2.5285e-06  1.5536e-03  2.3080e-03  0:00:45   27
-        24  8.1663e-02  1.3861e-04  7.1203e-05  7.3650e-05  2.4131e-06  1.5226e-03  2.2897e-03  0:00:44   26
-        25  7.8201e-02  1.3464e-04  7.1561e-05  7.4689e-05  2.2310e-06  1.4525e-03  2.2117e-03  0:00:42   25
-        26  7.3247e-02  1.2780e-04  7.0651e-05  7.3785e-05  2.0009e-06  1.3527e-03  2.0861e-03  0:00:40   24
-        27  6.7423e-02  1.1870e-04  6.8194e-05  7.0874e-05  1.7528e-06  1.2342e-03  1.9244e-03  0:00:39   23
-        28  6.0960e-02  1.0829e-04  6.4421e-05  6.6565e-05  1.5061e-06  1.1076e-03  1.7399e-03  0:00:37   22
-        29  5.4362e-02  9.7412e-05  5.9608e-05  6.1410e-05  1.2761e-06  9.8280e-04  1.5456e-03  0:00:35   21
-        30  4.7964e-02  8.6722e-05  5.4254e-05  5.5796e-05  1.0720e-06  8.6466e-04  1.3558e-03  0:00:34   20
-        31  4.1942e-02  7.6652e-05  4.8683e-05  5.0131e-05  8.9664e-07  7.5806e-04  1.1783e-03  0:00:33   19
-        32  3.6496e-02  6.7381e-05  4.3213e-05  4.4671e-05  7.4868e-07  6.6340e-04  1.0143e-03  0:00:31   18
-        33  3.1630e-02  5.8965e-05  3.8001e-05  3.9603e-05  6.2989e-07  5.8019e-04  8.6847e-04  0:00:29   17
-
-      iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
-        34  2.7296e-02  5.1410e-05  3.3150e-05  3.4937e-05  5.3090e-07  5.0722e-04  7.3939e-04  0:00:27   16
-        35  2.3517e-02  4.4731e-05  2.8768e-05  3.0686e-05  4.4498e-07  4.4293e-04  6.2777e-04  0:00:25   15
-        36  2.0199e-02  3.8849e-05  2.4860e-05  2.6819e-05  3.7414e-07  3.8621e-04  5.3219e-04  0:00:24   14
-        37  1.7370e-02  3.3655e-05  2.1436e-05  2.3358e-05  3.1530e-07  3.3564e-04  4.5196e-04  0:00:22   13
-        38  1.4886e-02  2.9102e-05  1.8449e-05  2.0265e-05  2.6473e-07  2.9129e-04  3.8423e-04  0:00:20   12
-        39  1.2736e-02  2.5127e-05  1.5855e-05  1.7530e-05  2.2203e-07  2.5254e-04  3.2781e-04  0:00:18   11
-        40  1.0936e-02  2.1658e-05  1.3621e-05  1.5114e-05  1.8657e-07  2.1886e-04  2.8041e-04  0:00:17   10
-        41  9.4098e-03  1.8646e-05  1.1699e-05  1.2994e-05  1.5689e-07  1.8929e-04  2.4002e-04  0:00:15    9
-        42  8.0445e-03  1.6031e-05  1.0042e-05  1.1129e-05  1.3232e-07  1.6318e-04  2.0530e-04  0:00:13    8
-        43  6.8922e-03  1.3762e-05  8.6172e-06  9.5054e-06  1.1194e-07  1.4049e-04  1.7567e-04  0:00:12    7
-        44  5.9194e-03  1.1811e-05  7.3842e-06  8.0951e-06  9.5257e-08  1.2104e-04  1.5031e-04  0:00:10    6
-
-      iter  continuity  x-velocity  y-velocity  z-velocity      energy           k       omega     time/iter
-        45  5.1631e-03  1.0148e-05  6.3295e-06  6.8741e-06  8.1681e-08  1.0440e-04  1.2904e-04  0:00:08    5
-        46  4.4870e-03  8.7420e-06  5.4275e-06  5.8249e-06  7.0557e-08  9.0281e-05  1.1103e-04  0:00:07    4
-        47  3.8843e-03  7.5629e-06  4.6591e-06  4.9320e-06  6.1532e-08  7.8562e-05  9.5968e-05  0:00:05    3
-        48  3.3824e-03  6.5867e-06  4.0116e-06  4.1819e-06  5.4305e-08  6.8909e-05  8.3416e-05  0:00:03    2
-        49  2.9654e-03  5.7811e-06  3.4698e-06  3.5531e-06  4.8548e-08  6.1076e-05  7.2931e-05  0:00:02    1
-        50  2.6284e-03  5.1180e-06  3.0152e-06  3.0312e-06  4.3926e-08  5.4744e-05  6.4438e-05  0:00:00    0
 
 
 
@@ -850,7 +626,7 @@ Close Fluent
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  25.997 seconds)
+   **Total running time of the script:** ( 2 minutes  30.789 seconds)
 
 
 .. _sphx_glr_download_examples_00-postprocessing_post_processing_exhaust_manifold.py:
