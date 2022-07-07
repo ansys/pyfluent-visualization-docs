@@ -336,13 +336,13 @@ time step.</p>
 <span class="n">monitor1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;window-2&quot;</span><span class="p">)</span>
 
 <span class="c1">#Create callback which refreshes window-1 and window-2.</span>
-<span class="k">def</span> <span class="nf">auto_refersh_plot</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="n">event_info</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">auto_refresh_plot</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="n">event_info</span><span class="p">):</span>
     <span class="n">matplot_windows_manager</span><span class="o">.</span><span class="n">refresh_windows</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;window-1&quot;</span><span class="p">,</span> <span class="s2">&quot;window-2&quot;</span><span class="p">])</span>
 
 <span class="c1">#Register this callback with server events.</span>
-<span class="n">cb_init_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">events_manager</span><span class="o">.</span><span class="n">register_callback</span><span class="p">(</span><span class="s1">&#39;InitializedEvent&#39;</span><span class="p">,</span> <span class="n">auto_refersh_plot</span><span class="p">)</span>
-<span class="n">cb_data_read_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">events_manager</span><span class="o">.</span><span class="n">register_callback</span><span class="p">(</span><span class="s1">&#39;DataReadEvent&#39;</span><span class="p">,</span> <span class="n">auto_refersh_plot</span><span class="p">)</span>
-<span class="n">cb_time_step_ended_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">events_manager</span><span class="o">.</span><span class="n">register_callback</span><span class="p">(</span><span class="s1">&#39;TimestepEndedEvent&#39;</span><span class="p">,</span> <span class="n">auto_refersh_plot</span><span class="p">)</span>
+<span class="n">cb_init_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">events_manager</span><span class="o">.</span><span class="n">register_callback</span><span class="p">(</span><span class="s1">&#39;InitializedEvent&#39;</span><span class="p">,</span> <span class="n">auto_refresh_plot</span><span class="p">)</span>
+<span class="n">cb_data_read_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">events_manager</span><span class="o">.</span><span class="n">register_callback</span><span class="p">(</span><span class="s1">&#39;DataReadEvent&#39;</span><span class="p">,</span> <span class="n">auto_refresh_plot</span><span class="p">)</span>
+<span class="n">cb_time_step_ended_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">events_manager</span><span class="o">.</span><span class="n">register_callback</span><span class="p">(</span><span class="s1">&#39;TimestepEndedEvent&#39;</span><span class="p">,</span> <span class="n">auto_refresh_plot</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="py class">

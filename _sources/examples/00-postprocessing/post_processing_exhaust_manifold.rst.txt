@@ -70,7 +70,7 @@ This example demonstrates postprocessing using pyvista
 .. GENERATED FROM PYTHON SOURCE LINES 31-33
 
 First, download the case and data file and start Fluent as a service with
-Meshing mode, double precision, number of processors: 2
+Solver mode, double precision, number of processors: 2
 
 .. GENERATED FROM PYTHON SOURCE LINES 33-49
 
@@ -626,7 +626,7 @@ Close Fluent
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  26.913 seconds)
+   **Total running time of the script:** ( 2 minutes  38.763 seconds)
 
 
 .. _sphx_glr_download_examples_00-postprocessing_post_processing_exhaust_manifold.py:
