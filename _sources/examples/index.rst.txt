@@ -9,7 +9,7 @@
 ========
 Examples
 ========
-Add examples here for PyFluent ``ansys-fluent-visualization``.
+Add examples here for PyFluent-Visualization.
 
 ..
    This toctree must be a top level index to get it to show up in
@@ -29,15 +29,15 @@ Add examples here for PyFluent ``ansys-fluent-visualization``.
 
 .. _sphx_glr_examples_00-postprocessing:
 
-Postprocessing Examples
+Postprocessing examples
 ========================
-These examples demonstrate how to use the PyVista package to postprocess Fluent
+These examples show how to use external packages to postprocess Fluent
 results.
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates postprocessing using pyvista">
+    <div class="sphx-glr-thumbcontainer" tooltip="Postprocessing using PyVista and Matplotlib">
 
 .. only:: html
 

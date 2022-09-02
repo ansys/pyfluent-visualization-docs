@@ -6,14 +6,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>PyVista Windows Manager &#8212; pyfluent-visualization</title>
+    <title>PyVista windows manager &#8212; PyFluent-Visualization</title>
     
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
 
-    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -30,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    
+
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
 
     
         <link href="../../_static/css/breadcrumbs.css" rel="stylesheet">
@@ -45,49 +49,48 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Matplot Windows Manager" href="matplot_windows_manager.html" />
+    <link rel="next" title="Matplotlib windows manager" href="matplot_windows_manager.html" />
     <link rel="prev" title="MonitorPlot" href="monitorplot.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><style>
-    .navbar-light {
-        background-color: black !important;
-    }
-</style>
-
-<div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="https://www.ansys.com/">
-  <img src="../../_static/pyansys-logo-black-cropped.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/pyansys-logo-black-cropped.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/pyansys-logo-black-cropped.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon" >
-      <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-    </span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -98,19 +101,19 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../getting_started/index.html">
-  Getting Started
+  Getting started
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../users_guide/index.html">
-  User Guide
+  User guide
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="../index.html">
-  API Reference
+  API reference
  </a>
 </li>
 
@@ -132,8 +135,15 @@
       
     </div>
 
-    
     <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
@@ -145,7 +155,6 @@
       </div>
       
     </div>
-    
   </div>
 </div>
     </nav>
@@ -163,13 +172,13 @@
         <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
     
     
-        <li class="nav-item nav-item-0"><a href="../../index.html">pyfluent-visualization</a> » </li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyFluent-Visualization</a> » </li>
     
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >API Reference</a> » </li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >API reference</a> » </li>
           <li class="nav-item nav-item-2"><a href="index.html" >Visualization</a> » </li>
           <li class="nav-item nav-item-3"><a href="post_objects.html" accesskey="U">&lt;no title&gt;</a> » </li>
-        <li class="nav-item nav-item-this"><a href="">PyVista Windows Manager</a></li> 
+        <li class="nav-item nav-item-this"><a href="">PyVista windows manager</a></li> 
       </ul>
     </div>
         </div>
@@ -178,13 +187,13 @@
     
 
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -244,7 +253,7 @@
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="xyplot.html">
-       XYPlot
+       XY plot
       </a>
      </li>
      <li class="toctree-l3">
@@ -256,12 +265,12 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     PyVista Windows Manager
+     PyVista windows manager
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="matplot_windows_manager.html">
-     Matplot Windows Manager
+     Matplotlib windows manager
     </a>
    </li>
   </ul>
@@ -270,50 +279,52 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
 
 <nav id="bd-toc-nav">
     
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="pyvista-windows-manager">
-<span id="ref-pyvista-windows-manager"></span><h1>PyVista Windows Manager<a class="headerlink" href="#pyvista-windows-manager" title="Permalink to this headline">#</a></h1>
-<p>This class manages <cite>PyVista</cite> windows and provides methods to directly interact with them.
-By registering these methods to EventsManager, graphics can be updated during run
-time and animations can be created.</p>
-<p>The following example will update <cite>window-1</cite> during solution initialization and whenever data
-is read. Also during calculation it will update <cite>window-1</cite> at end of every time step and
-will create animation.</p>
-<p><cite>Important</cite>:Animation will be saved whenever window is closed.</p>
+<span id="ref-pyvista-windows-manager"></span><h1>PyVista windows manager<a class="headerlink" href="#pyvista-windows-manager" title="Permalink to this headline">#</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">PyVistaWindowsManager</span></code> class provides for managing and directly interacting
+with PyVista windows. By registering these methods with <code class="docutils literal notranslate"><span class="pre">EventsManager</span></code>, you
+can update graphics during run time and create animations.</p>
+<p>The following example updates <code class="docutils literal notranslate"><span class="pre">window-1</span></code> during solution initialization and
+whenever data is read. During the calculation, it also updates <code class="docutils literal notranslate"><span class="pre">window-1</span></code> at
+the end of every time step and creates an animation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The animation is saved when the window is closed.</p>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.fluent.visualization.pyvista</span> <span class="kn">import</span> <span class="n">Graphics</span>
 <span class="kn">from</span> <span class="nn">ansys.fluent.visualization.pyvista</span> <span class="kn">import</span> <span class="n">pyvista_windows_manager</span>
 
@@ -327,7 +338,7 @@ will create animation.</p>
 <span class="c1">#Display contour on window-1.</span>
 <span class="n">contour1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-1&quot;</span><span class="p">)</span>
 
-<span class="c1">#Create callback which refreshes window-1.</span>
+<span class="c1">#Create callback that refreshes window-1.</span>
 <span class="k">def</span> <span class="nf">auto_refresh_contour</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="n">event_info</span><span class="p">):</span>
     <span class="n">pyvista_windows_manager</span><span class="o">.</span><span class="n">refresh_windows</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;window-1&quot;</span><span class="p">])</span>
 
@@ -336,14 +347,14 @@ will create animation.</p>
 <span class="n">cb_data_read_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">events_manager</span><span class="o">.</span><span class="n">register_callback</span><span class="p">(</span><span class="s1">&#39;DataReadEvent&#39;</span><span class="p">,</span> <span class="n">auto_refresh_contour</span><span class="p">)</span>
 <span class="n">cb_time_step_ended_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">events_manager</span><span class="o">.</span><span class="n">register_callback</span><span class="p">(</span><span class="s1">&#39;TimestepEndedEvent&#39;</span><span class="p">,</span> <span class="n">auto_refresh_contour</span><span class="p">)</span>
 
-<span class="c1">#Create animation for window-1</span>
+<span class="c1">#Create animation for window-1.</span>
 <span class="n">pyvista_windows_manager</span><span class="o">.</span><span class="n">animate_windows</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;window-1&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 <dl class="py class">
 <dt class="sig sig-object py" id="ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.fluent.visualization.pyvista.pyvista_windows_manager.</span></span><span class="sig-name descname"><span class="pre">PyVistaWindowsManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager" title="Permalink to this definition">#</a></dt>
-<dd><p>Class for PyVista windows manager.</p>
+<dd><p>Provides for managing PyVista windows.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.animate_windows">
 <span class="sig-name descname"><span class="pre">animate_windows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">windows_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.animate_windows" title="Permalink to this definition">#</a></dt>
@@ -351,12 +362,12 @@ will create animation.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>session_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Session id to animate. If specified, animation will be created
-for windows which belong to specified session. Otherwise
-animation will be created for all windows.</p>
+<dt><strong>session_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Session ID for animating the windows that belong only to this
+session. The default is <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, in which case the windows in all
+sessions are animated.</p>
 </dd>
-<dt><strong>windows_id</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Windows id to animate. If not specified, animation will be
-created for all windows.</p>
+<dt><strong>windows_id</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>List of IDs for the windows to animate. The default is <code class="docutils literal notranslate"><span class="pre">[]</span></code>, in which
+case all windows are animated.</p>
 </dd>
 </dl>
 </dd>
@@ -381,12 +392,12 @@ created for all windows.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>session_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Session id to close. If specified, windows which belong to
-specified session will be closed. Otherwise windows for all
-sessions will be closed.</p>
+<dt><strong>session_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Session ID for closing the windows that belong only to this session.
+The default is <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, in which case the windows in all sessions
+are closed.</p>
 </dd>
-<dt><strong>windows_id</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Windows id to close. If not specified, all windows will be
-closed.</p>
+<dt><strong>windows_id</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>List of IDs for the windows to close. The default is <code class="docutils literal notranslate"><span class="pre">[]</span></code>, in which
+all windows are closed.</p>
 </dd>
 </dl>
 </dd>
@@ -401,24 +412,24 @@ closed.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.get_plotter">
 <span class="sig-name descname"><span class="pre">get_plotter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.get_plotter" title="Permalink to this definition">#</a></dt>
-<dd><p>Get PyVista Plotter.</p>
+<dd><p>Get the PyVista plotter.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>window_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Window Id for plotter.</p>
+<dt><strong>window_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Window ID for the plotter.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">BackgroundPlotter</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">pv.Plotter</span></code>]</dt><dd><p>PyVista Plotter.</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">BackgroundPlotter</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">pv.Plotter</span></code>]</dt><dd><p>PyVista plotter.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/dev/library/typing.html#typing.Union" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">BackgroundPlotter</span></code>, <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.34.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plotter</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/dev/library/typing.html#typing.Union" title="(in Python v3.12)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">BackgroundPlotter</span></code>, <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.36.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plotter</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -426,17 +437,18 @@ closed.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.open_window">
 <span class="sig-name descname"><span class="pre">open_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.open_window" title="Permalink to this definition">#</a></dt>
-<dd><p>Open new window.</p>
+<dd><p>Open a new window.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>window_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Id for new window. If not specified unique id is used.</p>
+<dt><strong>window_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>ID for the new window. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which
+case a unique ID is automatically assigned.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></dt><dd><p>Window id.</p>
+<dt><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></dt><dd><p>ID for the new window.</p>
 </dd>
 </dl>
 </dd>
@@ -451,19 +463,20 @@ closed.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.plot">
 <span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.plot" title="Permalink to this definition">#</a></dt>
-<dd><p>Draw plot.</p>
+<dd><p>Draw a plot.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>object: GraphicsDefn</strong></dt><dd><p>Object to plot.</p>
 </dd>
-<dt><strong>window_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Window id for plot. If not specified unique id is used.</p>
+<dt><strong>window_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Window ID for the plot. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which
+case a unique ID is assigned.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/dev/library/exceptions.html#RuntimeError" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></a></dt><dd><p>If window does not support object.</p>
+<dt><a class="reference external" href="https://docs.python.org/dev/library/exceptions.html#RuntimeError" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></a></dt><dd><p>If the window does not support the object.</p>
 </dd>
 </dl>
 </dd>
@@ -482,12 +495,12 @@ closed.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>session_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Session id to refresh. If specified, all windows which belong to
-specified session will be refreshed. Otherwise windows for all
-sessions will be refreshed.</p>
+<dt><strong>session_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Session ID for refreshing the windows that belong only to this
+session. The default is <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, in which case the windows in all
+sessions are refreshed.</p>
 </dd>
-<dt><strong>windows_id</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Windows id to refresh. If not specified, all windows will be
-refreshed.</p>
+<dt><strong>windows_id</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>IDs of the windows to refresh. The default is <code class="docutils literal notranslate"><span class="pre">[]</span></code>, in which case
+all windows are refreshed.</p>
 </dd>
 </dl>
 </dd>
@@ -502,19 +515,19 @@ refreshed.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.save_graphic">
 <span class="sig-name descname"><span class="pre">save_graphic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.save_graphic" title="Permalink to this definition">#</a></dt>
-<dd><p>Save graphics.</p>
+<dd><p>Save a graphic.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>window_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Window id for which graphic should be saved.</p>
+<dt><strong>window_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Window ID for the graphic to save.</p>
 </dd>
-<dt><strong>format</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Graphic format. Supported formats are svg, eps, ps, pdf and tex.</p>
+<dt><strong>format</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Graphic file format. Supported formats are SVG, EPS, PS, PDF, and TEX.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/dev/library/exceptions.html#ValueError" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If window does not support specified format.</p>
+<dt><a class="reference external" href="https://docs.python.org/dev/library/exceptions.html#ValueError" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a></dt><dd><p>If the window does not support the specified format.</p>
 </dd>
 </dl>
 </dd>
@@ -529,19 +542,19 @@ refreshed.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.set_object_for_window">
 <span class="sig-name descname"><span class="pre">set_object_for_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.pyvista.pyvista_windows_manager.PyVistaWindowsManager.set_object_for_window" title="Permalink to this definition">#</a></dt>
-<dd><p>Associate visualization object with running window instance.</p>
+<dd><p>Associate a visualization object with a running window instance.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>object</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphicsDefn</span></code></span></dt><dd><p>Post object to associate with window.</p>
+<dt><strong>object</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphicsDefn</span></code></span></dt><dd><p>Post object to associate with a running window instance.</p>
 </dd>
-<dt><strong>window_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Window id to associate.</p>
+<dt><strong>window_id</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Window ID for the association.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/dev/library/exceptions.html#RuntimeError" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></a></dt><dd><p>If window does not support object.</p>
+<dt><a class="reference external" href="https://docs.python.org/dev/library/exceptions.html#RuntimeError" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RuntimeError</span></code></a></dt><dd><p>If the window does not support the object.</p>
 </dd>
 </dl>
 </dd>
@@ -558,33 +571,35 @@ refreshed.</p>
 </section>
 
 
-              </div>
+              </article>
               
-              
-          </main>
-          
 
+              
+          </div>
+          
       </div>
     </div>
+
+  
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-<footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>
