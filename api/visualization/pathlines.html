@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>XY plot &#8212; PyFluent-Visualization</title>
+    <title>Pathlines &#8212; PyFluent-Visualization</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="MonitorPlot" href="monitorplot.html" />
-    <link rel="prev" title="Plots" href="plots.html" />
+    <link rel="next" title="Plots" href="plots.html" />
+    <link rel="prev" title="Vector" href="vector.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
   </head>
@@ -181,8 +181,8 @@
           <li class="nav-item nav-item-1"><a href="../index.html" >API reference</a> » </li>
           <li class="nav-item nav-item-2"><a href="index.html" >Visualization</a> » </li>
           <li class="nav-item nav-item-3"><a href="post_objects.html" >&lt;no title&gt;</a> » </li>
-          <li class="nav-item nav-item-4"><a href="plots.html" accesskey="U">Plots</a> » </li>
-        <li class="nav-item nav-item-this"><a href="">XY plot</a></li> 
+          <li class="nav-item nav-item-4"><a href="graphics.html" accesskey="U">Graphics</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">Pathlines</a></li> 
       </ul>
     </div>
         </div>
@@ -213,16 +213,16 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 has-children">
+   <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="graphics.html">
      Graphics
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="mesh.html">
        Mesh
@@ -243,25 +243,25 @@
        Vector
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="pathlines.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Pathlines
       </a>
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 current active has-children">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="plots.html">
      Plots
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
     <label for="toctree-checkbox-3">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="xyplot.html">
        XY plot
       </a>
      </li>
@@ -309,10 +309,10 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ansys.fluent.visualization.matplotlib.matplot_objects.XYPlot">
+  <a class="reference internal nav-link" href="#ansys.fluent.visualization.pyvista.pyvista_objects.Pathlines">
    <code class="docutils literal notranslate">
     <span class="pre">
-     XYPlot
+     Pathlines
     </span>
    </code>
   </a>
@@ -336,28 +336,21 @@
               
               <article class="bd-article" role="main">
                 
-  <section id="xy-plot">
-<span id="ref-xyplot"></span><h1>XY plot<a class="headerlink" href="#xy-plot" title="Permalink to this heading">#</a></h1>
-<span class="target" id="post-xyplot"></span><dl class="py class">
-<dt class="sig sig-object py" id="ansys.fluent.visualization.matplotlib.matplot_objects.XYPlot">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.fluent.visualization.matplotlib.matplot_objects.</span></span><span class="sig-name descname"><span class="pre">XYPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_helper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.matplotlib.matplot_objects.XYPlot" title="Permalink to this definition">#</a></dt>
-<dd><p>Provides for displaying XY plots.</p>
-<dl class="field-list">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
-<dt><strong>name</strong></dt><dd></dd>
-<dt><strong>parent</strong></dt><dd></dd>
-<dt><strong>api_helper</strong></dt><dd></dd>
-<dt><strong>.. code-block:: python</strong></dt><dd><p>from ansys.fluent.visualization.matplotlib import Plots</p>
-<p>matplotlib_plots =  Plots(session)
-plot1 = matplotlib_plots.XYPlots[“plot-1”]
-plot1.surfaces_list = [‘symmetry’, ‘wall’]
-plot1.y_axis_function = “temperature”
-plot1.plot(“window-0”)</p>
-</dd>
-</dl>
-</dd>
-</dl>
+  <section id="pathlines">
+<span id="ref-pathlines"></span><h1>Pathlines<a class="headerlink" href="#pathlines" title="Permalink to this heading">#</a></h1>
+<span class="target" id="post-pathlines"></span><dl class="py class">
+<dt class="sig sig-object py" id="ansys.fluent.visualization.pyvista.pyvista_objects.Pathlines">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.fluent.visualization.pyvista.pyvista_objects.</span></span><span class="sig-name descname"><span class="pre">Pathlines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_helper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.pyvista.pyvista_objects.Pathlines" title="Permalink to this definition">#</a></dt>
+<dd><p>Pathlines definition for PyVista.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.fluent.visualization.pyvista</span> <span class="kn">import</span>  <span class="n">Graphics</span>
+
+<span class="n">graphics_session</span> <span class="o">=</span> <span class="n">Graphics</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="n">pathlines1</span> <span class="o">=</span> <span class="n">graphics_session</span><span class="o">.</span><span class="n">Pathlines</span><span class="p">[</span><span class="s2">&quot;pathlines-1&quot;</span><span class="p">]</span>
+<span class="n">pathlines1</span><span class="o">.</span><span class="n">field</span> <span class="o">=</span> <span class="s2">&quot;velocity-magnitude&quot;</span>
+<span class="n">pathlines1</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;inlet&#39;</span><span class="p">]</span>
+<span class="n">pathlines1</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="s2">&quot;window-0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p class="rubric">Attributes</p>
 <table class="table">
 <thead>
@@ -366,32 +359,17 @@ plot1.plot(“window-0”)</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>boundary_values</p></td>
-<td><p>Plot Boundary values.</p></td>
+<tr class="row-even"><td><p>field</p></td>
+<td><p>Pathlines field.</p></td>
 </tr>
-<tr class="row-odd"><td><p>direction_vector</p></td>
-<td><p>Direction Vector.</p></td>
+<tr class="row-odd"><td><p>field.allowed_values</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">field</span></code> allowed values.</p></td>
 </tr>
-<tr class="row-even"><td><p>node_values</p></td>
-<td><p>Plot nodal values.</p></td>
+<tr class="row-even"><td><p>surfaces_list</p></td>
+<td><p>List of surfaces for pathlines.</p></td>
 </tr>
-<tr class="row-odd"><td><p>surfaces_list</p></td>
-<td><p>List of surfaces for plotting.</p></td>
-</tr>
-<tr class="row-even"><td><p>surfaces_list.allowed_values</p></td>
+<tr class="row-odd"><td><p>surfaces_list.allowed_values</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">surfaces_list</span></code> allowed values.</p></td>
-</tr>
-<tr class="row-odd"><td><p>x_axis_function</p></td>
-<td><p>X Axis Function.</p></td>
-</tr>
-<tr class="row-even"><td><p>x_axis_function.allowed_values</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">x_axis_function</span></code> allowed values.</p></td>
-</tr>
-<tr class="row-odd"><td><p>y_axis_function</p></td>
-<td><p>Y Axis Function.</p></td>
-</tr>
-<tr class="row-even"><td><p>y_axis_function.allowed_values</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">y_axis_function</span></code> allowed values.</p></td>
 </tr>
 </tbody>
 </table>
@@ -403,8 +381,8 @@ plot1.plot(“window-0”)</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>plot</p></td>
-<td><p>Draw plot.</p></td>
+<tr class="row-even"><td><p>display</p></td>
+<td><p>Display graphics.</p></td>
 </tr>
 </tbody>
 </table>

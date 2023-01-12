@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Plots &#8212; PyFluent-Visualization</title>
     
@@ -44,7 +44,9 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -54,9 +56,9 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="XY plot" href="xyplot.html" />
-    <link rel="prev" title="Vector" href="vector.html" />
+    <link rel="prev" title="Pathlines" href="pathlines.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -160,6 +162,7 @@
     </nav>
     
     
+    
         <div class="container-xl">
     <div class="row">
         <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
@@ -239,6 +242,11 @@
        Vector
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pathlines.html">
+       Pathlines
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 current active has-children">
@@ -293,9 +301,23 @@
     
     <div class="toc-item">
       
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ansys.fluent.visualization.matplotlib.matplot_objects.Plots">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Plots
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
 </nav>
     </div>
     
@@ -314,32 +336,12 @@
               <article class="bd-article" role="main">
                 
   <section id="plots">
-<span id="ref-plots"></span><h1>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">#</a></h1>
+<span id="ref-plots"></span><h1>Plots<a class="headerlink" href="#plots" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="ansys.fluent.visualization.matplotlib.matplot_objects.Plots">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.fluent.visualization.matplotlib.matplot_objects.</span></span><span class="sig-name descname"><span class="pre">Plots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_surfaces_provider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.fluent.visualization.matplotlib.matplot_objects.Plots" title="Permalink to this definition">#</a></dt>
-<dd><p>Provides the Matplotlib <code class="docutils literal notranslate"><span class="pre">Plots</span></code> objects manager.</p>
-<p>This class provides access to <code class="docutils literal notranslate"><span class="pre">Plots</span></code> object containers for a given
+<dd><p>This class provides access to <code class="docutils literal notranslate"><span class="pre">Plots</span></code> object containers for a given
 session so that plots can be created.</p>
-<dl class="field-list">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><strong>session</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">obj</span></code></span></dt><dd><p>Session object.</p>
-</dd>
-<dt><strong>local_surfaces_provider</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Object providing local surfaces so that you can access surfaces
-created in other modules, such as PyVista. The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Attributes</dt>
-<dd class="field-even"><dl>
-<dt><strong>XYPlots</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Container for XY plot objects.</p>
-</dd>
-<dt><strong>MonitorPlots</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Container for monitor plot objects.</p>
-</dd>
-</dl>
-</dd>
-</dl>
 </dd></dl>
 
 <p>In the following example, a <code class="docutils literal notranslate"><span class="pre">Plots</span></code> object is instantiated with a Fluent session
@@ -395,13 +397,13 @@ a monitor plot.</p>
   
   <div class="footer-item">
     <p class="copyright">
-    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2023 ANSYS, Inc. All rights reserved.<br>
 </p>
   </div>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
 </p>
   </div>
   

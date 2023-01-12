@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>User guide &#8212; PyFluent-Visualization</title>
     
@@ -44,7 +44,9 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/thebelab-helper.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -56,7 +58,7 @@
     <link rel="next" title="API reference" href="../api/index.html" />
     <link rel="prev" title="Getting started" href="../getting_started/index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -158,6 +160,7 @@
   </div>
 </div>
     </nav>
+    
     
     
         <div class="container-xl">
@@ -287,15 +290,15 @@
               <article class="bd-article" role="main">
                 
   <section id="user-guide">
-<span id="ref-user-guide"></span><h1>User guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">#</a></h1>
+<span id="ref-user-guide"></span><h1>User guide<a class="headerlink" href="#user-guide" title="Permalink to this heading">#</a></h1>
 <p>You can use PyFluent-Visualization for postprocessing of Fluent results
 to display graphics objects and plot data.</p>
 <section id="graphics-operations">
-<h2>Graphics operations<a class="headerlink" href="#graphics-operations" title="Permalink to this headline">#</a></h2>
+<h2>Graphics operations<a class="headerlink" href="#graphics-operations" title="Permalink to this heading">#</a></h2>
 <p>Examples follow for graphics operations that PyFluent-Visualization
 supports.</p>
 <section id="display-mesh">
-<h3>Display mesh<a class="headerlink" href="#display-mesh" title="Permalink to this headline">#</a></h3>
+<h3>Display mesh<a class="headerlink" href="#display-mesh" title="Permalink to this heading">#</a></h3>
 <p>This example shows how you can display a mesh:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ansys.fluent.core</span> <span class="k">as</span> <span class="nn">pyfluent</span>
 <span class="kn">from</span> <span class="nn">ansys.fluent.core</span> <span class="kn">import</span> <span class="n">examples</span>
@@ -335,7 +338,7 @@ supports.</p>
 </div>
 </section>
 <section id="display-iso-surface">
-<h3>Display iso-surface<a class="headerlink" href="#display-iso-surface" title="Permalink to this headline">#</a></h3>
+<h3>Display iso-surface<a class="headerlink" href="#display-iso-surface" title="Permalink to this heading">#</a></h3>
 <p>This example shows how you can display an iso-surface:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">surf_outlet_plane</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Surfaces</span><span class="p">[</span><span class="s2">&quot;outlet-plane&quot;</span><span class="p">]</span>
 <span class="n">surf_outlet_plane</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;iso-surface&quot;</span>
@@ -347,7 +350,7 @@ supports.</p>
 </div>
 </section>
 <section id="display-contour">
-<h3>Display contour<a class="headerlink" href="#display-contour" title="Permalink to this headline">#</a></h3>
+<h3>Display contour<a class="headerlink" href="#display-contour" title="Permalink to this heading">#</a></h3>
 <p>This example shows how you can display a contour:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature_contour_manifold</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Contours</span><span class="p">[</span><span class="s2">&quot;contour-temperature-manifold&quot;</span><span class="p">]</span>
 <span class="n">temperature_contour_manifold</span><span class="o">.</span><span class="n">field</span> <span class="o">=</span> <span class="s2">&quot;temperature&quot;</span>
@@ -364,7 +367,7 @@ supports.</p>
 </div>
 </section>
 <section id="display-vector">
-<h3>Display vector<a class="headerlink" href="#display-vector" title="Permalink to this headline">#</a></h3>
+<h3>Display vector<a class="headerlink" href="#display-vector" title="Permalink to this heading">#</a></h3>
 <p>This example shows how you can display a vector:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">velocity_vector</span> <span class="o">=</span> <span class="n">graphics</span><span class="o">.</span><span class="n">Vectors</span><span class="p">[</span><span class="s2">&quot;velocity-vector&quot;</span><span class="p">]</span>
 <span class="n">velocity_vector</span><span class="o">.</span><span class="n">surfaces_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;outlet-plane&quot;</span><span class="p">]</span>
@@ -375,11 +378,11 @@ supports.</p>
 </section>
 </section>
 <section id="plot-operations">
-<h2>Plot operations<a class="headerlink" href="#plot-operations" title="Permalink to this headline">#</a></h2>
+<h2>Plot operations<a class="headerlink" href="#plot-operations" title="Permalink to this heading">#</a></h2>
 <p>Examples follow for plot operations that PyFluent-Visualization
 supports.</p>
 <section id="display-plot">
-<h3>Display plot<a class="headerlink" href="#display-plot" title="Permalink to this headline">#</a></h3>
+<h3>Display plot<a class="headerlink" href="#display-plot" title="Permalink to this heading">#</a></h3>
 <p>This example shows how you can display the XY plot:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plots_session_1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">solver_session</span><span class="p">)</span>
 <span class="n">xy_plot</span> <span class="o">=</span> <span class="n">plots_session_1</span><span class="o">.</span><span class="n">XYPlots</span><span class="p">[</span><span class="s2">&quot;xy-plot&quot;</span><span class="p">]</span>
@@ -390,7 +393,7 @@ supports.</p>
 </div>
 </section>
 <section id="display-solution-residual-plot">
-<h3>Display solution residual plot<a class="headerlink" href="#display-solution-residual-plot" title="Permalink to this headline">#</a></h3>
+<h3>Display solution residual plot<a class="headerlink" href="#display-solution-residual-plot" title="Permalink to this heading">#</a></h3>
 <p>This example shows how you can display the solution residual plot:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matplotlib_plots1</span> <span class="o">=</span> <span class="n">Plots</span><span class="p">(</span><span class="n">solver_session</span><span class="p">)</span>
 <span class="n">residual</span> <span class="o">=</span> <span class="n">matplotlib_plots1</span><span class="o">.</span><span class="n">Monitors</span><span class="p">[</span><span class="s2">&quot;residual&quot;</span><span class="p">]</span>
@@ -400,7 +403,7 @@ supports.</p>
 </div>
 </section>
 <section id="display-solution-monitors-plot">
-<h3>Display solution monitors plot<a class="headerlink" href="#display-solution-monitors-plot" title="Permalink to this headline">#</a></h3>
+<h3>Display solution monitors plot<a class="headerlink" href="#display-solution-monitors-plot" title="Permalink to this heading">#</a></h3>
 <p>This example shows how you can display the solution monitors plot:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solver_session</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">solve</span><span class="o">.</span><span class="n">initialize</span><span class="o">.</span><span class="n">hyb_initialization</span><span class="p">()</span>
 <span class="n">solver_session</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">solve</span><span class="o">.</span><span class="n">set</span><span class="o">.</span><span class="n">number_of_iterations</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
@@ -435,13 +438,13 @@ supports.</p>
   
   <div class="footer-item">
     <p class="copyright">
-    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2023 ANSYS, Inc. All rights reserved.<br>
 </p>
   </div>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
 </p>
   </div>
   

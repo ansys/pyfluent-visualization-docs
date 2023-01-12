@@ -456,12 +456,13 @@ Create vector
 ~~~~~~~~~~~~~
 Create a vector on a predefined surface.
 
-.. GENERATED FROM PYTHON SOURCE LINES 194-200
+.. GENERATED FROM PYTHON SOURCE LINES 194-201
 
 .. code-block:: default
 
 
     velocity_vector = graphics.Vectors["velocity-vector"]
+    velocity_vector.field = "pressure"
     velocity_vector.surfaces_list = ["solid_up:1:830"]
     velocity_vector.scale = 2
     velocity_vector.display("window-8")
@@ -478,13 +479,36 @@ Create a vector on a predefined surface.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 201-204
+.. GENERATED FROM PYTHON SOURCE LINES 202-205
+
+Create Pathlines
+~~~~~~~~~~~~~~~~
+Create a pathlines on a predefined surface.
+
+.. GENERATED FROM PYTHON SOURCE LINES 205-211
+
+.. code-block:: default
+
+
+    pathlines = graphics.Pathlines["pathlines"]
+    pathlines.field = "velocity-magnitude"
+    pathlines.surfaces_list = ["inlet", "inlet1", "inlet2"]
+    # pathlines.display("window-9")
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 212-215
 
 Create plot object
 ~~~~~~~~~~~~~~~~~~
 Create the plot object for the session.
 
-.. GENERATED FROM PYTHON SOURCE LINES 204-207
+.. GENERATED FROM PYTHON SOURCE LINES 215-218
 
 .. code-block:: default
 
@@ -498,13 +522,13 @@ Create the plot object for the session.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 208-211
+.. GENERATED FROM PYTHON SOURCE LINES 219-222
 
 Create XY plot
 ~~~~~~~~~~~~~~
 Create the default XY plot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 211-214
+.. GENERATED FROM PYTHON SOURCE LINES 222-225
 
 .. code-block:: default
 
@@ -518,13 +542,13 @@ Create the default XY plot.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 215-218
+.. GENERATED FROM PYTHON SOURCE LINES 226-229
 
 Set plot surface and Y-axis function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Set the surface on which to generate the plot and the Y-axis function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 218-222
+.. GENERATED FROM PYTHON SOURCE LINES 229-233
 
 .. code-block:: default
 
@@ -539,13 +563,13 @@ Set the surface on which to generate the plot and the Y-axis function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 223-226
+.. GENERATED FROM PYTHON SOURCE LINES 234-237
 
 Display XY plot
 ~~~~~~~~~~~~~~~~
 Display the generated XY plot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 226-229
+.. GENERATED FROM PYTHON SOURCE LINES 237-240
 
 .. code-block:: default
 
@@ -564,13 +588,13 @@ Display the generated XY plot.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 230-233
+.. GENERATED FROM PYTHON SOURCE LINES 241-244
 
 Create residual plot
 ~~~~~~~~~~~~~~~~~~~~~~
 Create and display the residual plot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 233-239
+.. GENERATED FROM PYTHON SOURCE LINES 244-250
 
 .. code-block:: default
 
@@ -592,13 +616,13 @@ Create and display the residual plot.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 240-243
+.. GENERATED FROM PYTHON SOURCE LINES 251-254
 
 Solve and plot solution monitors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Solve and plot solution monitors.
 
-.. GENERATED FROM PYTHON SOURCE LINES 243-257
+.. GENERATED FROM PYTHON SOURCE LINES 254-268
 
 .. code-block:: default
 
@@ -640,13 +664,13 @@ Solve and plot solution monitors.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 258-261
+.. GENERATED FROM PYTHON SOURCE LINES 269-272
 
 Close Fluent
 ~~~~~~~~~~~~
 Close Fluent.
 
-.. GENERATED FROM PYTHON SOURCE LINES 261-263
+.. GENERATED FROM PYTHON SOURCE LINES 272-274
 
 .. code-block:: default
 
@@ -662,28 +686,23 @@ Close Fluent.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  39.612 seconds)
+   **Total running time of the script:** ( 2 minutes  27.168 seconds)
 
 
 .. _sphx_glr_download_examples_00-postprocessing_post_processing_exhaust_manifold.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: post_processing_exhaust_manifold.py <post_processing_exhaust_manifold.py>`
 
-     :download:`Download Python source code: post_processing_exhaust_manifold.py <post_processing_exhaust_manifold.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: post_processing_exhaust_manifold.ipynb <post_processing_exhaust_manifold.ipynb>`
+      :download:`Download Jupyter notebook: post_processing_exhaust_manifold.ipynb <post_processing_exhaust_manifold.ipynb>`
 
 
 .. only:: html

@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Contributing &#8212; PyFluent-Visualization</title>
     
@@ -44,7 +44,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/thebelab-helper.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -55,7 +57,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Postprocessing using PyVista and Matplotlib" href="examples/00-postprocessing/post_processing_exhaust_manifold.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -159,6 +161,7 @@
     </nav>
     
     
+    
         <div class="container-xl">
     <div class="row">
         <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
@@ -257,7 +260,7 @@
               <article class="bd-article" role="main">
                 
   <section id="contributing">
-<span id="ref-contributing"></span><h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">#</a></h1>
+<span id="ref-contributing"></span><h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h1>
 <p>Overall guidance on contributing to a PyAnsys library appears in
 <a class="reference external" href="https://dev.docs.pyansys.com/how-to/contributing.html">Contributing</a>
 in the <em>PyAnsys Developer’s Guide</em>. Ensure that you are thoroughly
@@ -265,7 +268,7 @@ familiar with this guide, paying particular attention to <a class="reference ext
 before attempting to contribute to PyFluent-Visualization.</p>
 <p>The following contribution information is specific to PyFluent-Visualization.</p>
 <section id="clone-the-repository">
-<h2>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this headline">#</a></h2>
+<h2>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this heading">#</a></h2>
 <p>To clone and install the latest version of PyFluent-Visualization in
 development mode, run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyansys</span><span class="o">/</span><span class="n">pyfluent</span><span class="o">-</span><span class="n">visualization</span><span class="o">.</span><span class="n">git</span>
@@ -276,7 +279,7 @@ development mode, run:</p>
 </div>
 </section>
 <section id="build-documentation">
-<h2>Build documentation<a class="headerlink" href="#build-documentation" title="Permalink to this headline">#</a></h2>
+<h2>Build documentation<a class="headerlink" href="#build-documentation" title="Permalink to this heading">#</a></h2>
 <p>To build the PyFluent-Visualization documentation locally, in the root
 directory of the repository, run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">/</span><span class="n">requirements_doc</span><span class="o">.</span><span class="n">txt</span>
@@ -293,25 +296,25 @@ directory into a web browser.</p>
 </div>
 </section>
 <section id="post-issues">
-<h2>Post issues<a class="headerlink" href="#post-issues" title="Permalink to this headline">#</a></h2>
+<h2>Post issues<a class="headerlink" href="#post-issues" title="Permalink to this heading">#</a></h2>
 <p>Use the <a class="reference external" href="https://github.com/pyansys/pyfluent-visualization/issues">PyFluent Visualization Issues</a>
 page to submit questions, report bugs, and request new features.</p>
 </section>
 <section id="adhere-to-code-style">
-<h2>Adhere to code style<a class="headerlink" href="#adhere-to-code-style" title="Permalink to this headline">#</a></h2>
+<h2>Adhere to code style<a class="headerlink" href="#adhere-to-code-style" title="Permalink to this heading">#</a></h2>
 <p>PyFluent-Visualization is compliant with the <a class="reference external" href="https://dev.docs.pyansys.com/coding-style/index.html">PyAnsys coding style</a>. It uses the
 tool <a class="reference external" href="https://pre-commit.com/">pre-commit</a> to check the code style.
 You can install and active this tool with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m pip install pre-commit
-pre-commit install
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+pre-commit<span class="w"> </span>install
 </pre></div>
 </div>
 <p>You can then use the <code class="docutils literal notranslate"><span class="pre">style</span></code> rule defined in <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make style
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>style
 </pre></div>
 </div>
 <p>Or, you can directly run <a class="reference external" href="https://pre-commit.com/">pre-commit</a> with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit run --all-files --show-diff-on-failure
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files<span class="w"> </span>--show-diff-on-failure
 </pre></div>
 </div>
 </section>
@@ -336,13 +339,13 @@ pre-commit install
   
   <div class="footer-item">
     <p class="copyright">
-    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2023 ANSYS, Inc. All rights reserved.<br>
 </p>
   </div>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
 </p>
   </div>
   

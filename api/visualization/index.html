@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Visualization &#8212; PyFluent-Visualization</title>
     
@@ -44,7 +44,9 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -56,7 +58,7 @@
     <link rel="next" title="&lt;no title&gt;" href="post_objects.html" />
     <link rel="prev" title="API reference" href="../index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -160,6 +162,7 @@
     </nav>
     
     
+    
         <div class="container-xl">
     <div class="row">
         <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
@@ -235,6 +238,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="vector.html">
        Vector
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pathlines.html">
+       Pathlines
       </a>
      </li>
     </ul>
@@ -332,11 +340,11 @@
               <article class="bd-article" role="main">
                 
   <section id="visualization">
-<span id="ref-visualization"></span><h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">#</a></h1>
+<span id="ref-visualization"></span><h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading">#</a></h1>
 <p>Postprocessing of Fluent results can be done with either built-in Fluent
 postprocessing capabilities, PyVista, or Matplotlib integration.</p>
 <section id="fluent-tui-command-example">
-<h2>Fluent TUI command example<a class="headerlink" href="#fluent-tui-command-example" title="Permalink to this headline">#</a></h2>
+<h2>Fluent TUI command example<a class="headerlink" href="#fluent-tui-command-example" title="Permalink to this heading">#</a></h2>
 <p>Here visualization objects are constructed within Fluent. You can use
 standard Fluent commands to write graphics to a file.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solver_session</span><span class="o">.</span><span class="n">tui</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">contour</span><span class="p">[</span><span class="s1">&#39;contour-1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;boundary_values&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;color_map&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;field-velocity&#39;</span><span class="p">,</span> <span class="s1">&#39;font_automatic&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;font_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Helvetica&#39;</span><span class="p">,</span> <span class="s1">&#39;font_size&#39;</span><span class="p">:</span> <span class="mf">0.032</span><span class="p">,</span> <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%0.2e</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="mf">0.54</span><span class="p">,</span> <span class="s1">&#39;log_scale&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;show_all&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;user_skip&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;visible&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mf">6.0</span><span class="p">},</span> <span class="s1">&#39;coloring&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;smooth&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span> <span class="s1">&#39;contour_lines&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;display_state_name&#39;</span><span class="p">:</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;draw_mesh&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;field&#39;</span><span class="p">:</span> <span class="s1">&#39;pressure&#39;</span><span class="p">,</span> <span class="s1">&#39;filled&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;mesh_object&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;node_values&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;range_option&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;auto_range_on&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;global_range&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}},</span> <span class="s1">&#39;surfaces_list&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]}</span>
@@ -351,7 +359,7 @@ standard Fluent commands to write graphics to a file.</p>
 </div>
 </section>
 <section id="pyvista-example-graphics">
-<h2>PyVista example (graphics)<a class="headerlink" href="#pyvista-example-graphics" title="Permalink to this headline">#</a></h2>
+<h2>PyVista example (graphics)<a class="headerlink" href="#pyvista-example-graphics" title="Permalink to this heading">#</a></h2>
 <p>Here field data is extracted from the Fluent session into the Python
 environment. PyVista is then used to visualize the extracted data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import module</span>
@@ -407,7 +415,7 @@ environment. PyVista is then used to visualize the extracted data.</p>
 </div>
 </section>
 <section id="matplotlib-example-xy-plots">
-<h2>Matplotlib example (XY plots)<a class="headerlink" href="#matplotlib-example-xy-plots" title="Permalink to this headline">#</a></h2>
+<h2>Matplotlib example (XY plots)<a class="headerlink" href="#matplotlib-example-xy-plots" title="Permalink to this heading">#</a></h2>
 <p>Here plot data is extracted from the Fluent session into the Python
 environment. Matplotlib is then used to plot data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import module</span>
@@ -430,10 +438,6 @@ environment. Matplotlib is then used to plot data.</p>
 </pre></div>
 </div>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
@@ -461,13 +465,13 @@ environment. Matplotlib is then used to plot data.</p>
   
   <div class="footer-item">
     <p class="copyright">
-    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2023 ANSYS, Inc. All rights reserved.<br>
 </p>
   </div>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
 </p>
   </div>
   
